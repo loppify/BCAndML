@@ -4,6 +4,17 @@ require("solidity-coverage");
 require("hardhat-gas-reporter");
 require("dotenv").config();
 
+const args = process.argv.slice(2);
+const networkFlag = args.findIndex((arg) => arg === "--network");
+const selectedNetwork = networkFlag >= 0 ? args[networkFlag + 1] : args.find((arg) => arg.startsWith("--network="))?.split("=", 2)[1];
+if (selectedNetwork === "sepolia") {
+  const missing = ["SEPOLIA_RPC_URL", "DEPLOYER_PRIVATE_KEY", "ETHERSCAN_API_KEY"]
+    .filter((name) => !process.env[name]?.trim());
+  if (missing.length) {
+    throw new Error(`Sepolia configuration is incomplete. Set ${missing.join(", ")} in report/practice_02_smart_contracts/code/.env (copy .env.example first).`);
+  }
+}
+
 module.exports = {
   solidity: {
     version: "0.8.28",
