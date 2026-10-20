@@ -1,0 +1,26 @@
+{
+  "chainId": "31337",
+  "contracts": {
+    "registry": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+    "accessControl": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    "quarantineProxy": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+    "quarantineImplementation": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9"
+  },
+  "demo": {
+    "normal": {
+      "deviceId": "0x0957caed57c1d737bb0c52195a39e9d9785eeade77f97d7dae23c9f372276e42",
+      "confidenceBps": 1200,
+      "expectedFileHash": "0x7986ee2135cae9fc3facfe1e0160c4ba8b851d2fbb61d3ba684f25eb44d40b55",
+      "onChainStatus": 1
+    },
+    "attack": {
+      "deviceId": "0x0f89b5a208ebd9a982ff635b86244cae4b21f8a2eacaa490d525055dca80707c",
+      "confidenceBps": 9200,
+      "expectedFileHash": "0x22ac3d958be8edf5ce1ccc04509f91c2160a797e1f4d0c5a5e659471a22dcd8b",
+      "tamperedFileHash": "0x7b5a416721714eca36f940323bd77c6beb831cb935045e56e914451445779db2",
+      "hashesMatchTamperedCheck": false,
+      "onChainStatus": 2
+    },
+    "accessGranted": true
+  }
+}

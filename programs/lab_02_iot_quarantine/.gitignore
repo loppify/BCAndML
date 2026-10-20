@@ -1,0 +1,11 @@
+node_modules/
+build/
+cache/
+coverage/
+coverage.json
+.env
+!.env.example
+.openzeppelin/
+__pycache__/
+*.pyc
+artifacts/*.html

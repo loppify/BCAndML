@@ -1,0 +1,31 @@
+{
+  "name": "nure-lab-02-iot-quarantine",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage",
+    "gas": "REPORT_GAS=true hardhat test test/gas.test.js",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "seed:local": "hardhat run scripts/seed-demo.js --network localhost",
+    "seed:sepolia": "hardhat run scripts/seed-demo.js --network sepolia",
+    "scenario:local": "hardhat run scripts/run-scenario.js --network localhost",
+    "scenario:sepolia": "hardhat run scripts/run-scenario.js --network sepolia",
+    "demo:local": "hardhat run scripts/demo-local.js",
+    "integrity": "node scripts/check-integrity.js",
+    "verify:sepolia": "hardhat run scripts/verify.js --network sepolia",
+    "slither": "slither contracts --solc-remaps @openzeppelin=node_modules/@openzeppelin --filter-paths node_modules"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "5.2.0",
+    "@openzeppelin/contracts-upgradeable": "5.2.0",
+    "@openzeppelin/hardhat-upgrades": "^3.9.1",
+    "dotenv": "^16.4.7",
+    "hardhat": "2.29.1",
+    "hardhat-gas-reporter": "^1.0.10",
+    "solidity-coverage": "^0.8.16"
+  }
+}

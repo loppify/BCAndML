@@ -1,0 +1,12 @@
+{
+  "name": "IoT IDS deterministic oracle stub",
+  "version": 1,
+  "description": "Demonstration-only rule used instead of an off-chain machine-learning model.",
+  "rule": {
+    "feature": "failedLogins",
+    "attackMinimum": 10,
+    "attackConfidenceBps": 9200,
+    "normalConfidenceBps": 1200
+  },
+  "confidenceScale": "0..10000"
+}
