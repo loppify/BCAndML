@@ -1,0 +1,32 @@
+digraph UseCases {
+  graph [layout=neato, overlap=false, splines=true, bgcolor="white", pad=0.25, fontname="DejaVu Sans", label="Варіанти використання системи", labelloc=t, fontsize=18];
+  node [fontname="DejaVu Sans", fontsize=14, pin=true];
+  edge [fontname="DejaVu Sans", fontsize=11, color="#52606d", arrowsize=0.7];
+
+  owner [shape=box,style="rounded",label="Власник",pos="70,850!",width=1.35,height=0.45,fixedsize=true];
+  admin [shape=box,style="rounded",label="Адміністратор",pos="70,430!",width=1.55,height=0.45,fixedsize=true];
+  gateway [shape=box,style="rounded",label="Шлюз",pos="70,640!",width=1.35,height=0.45,fixedsize=true];
+  ml [shape=box,style="rounded",label="ML-модель",pos="70,740!",width=1.35,height=0.45,fixedsize=true];
+  oracle [shape=box,style="rounded",label="Оракул",pos="70,540!",width=1.35,height=0.45,fixedsize=true];
+  auditor [shape=box,style="rounded",label="Аудитор",pos="70,220!",width=1.35,height=0.45,fixedsize=true];
+
+  subgraph cluster_system {
+    label="IoT IDS та карантин"; color="#386cb0"; style="rounded";
+    register [shape=ellipse,label="Зареєструвати пристрій",pos="430,900!",width=3.5,height=0.62,fixedsize=true];
+    permissions [shape=ellipse,label="Надати / відкликати доступ",pos="430,800!",width=3.5,height=0.62,fixedsize=true];
+    analyze [shape=ellipse,label="Класифікувати мережевий flow",pos="430,700!",width=3.5,height=0.62,fixedsize=true];
+    record [shape=ellipse,label="Записати рішення, версію, hash",pos="430,600!",width=3.5,height=0.62,fixedsize=true];
+    quarantine [shape=ellipse,label="Перевести пристрій у карантин",pos="430,500!",width=3.5,height=0.62,fixedsize=true];
+    enforce [shape=ellipse,label="Дозволити / відхилити команду",pos="430,400!",width=3.5,height=0.62,fixedsize=true];
+    review [shape=ellipse,label="Переглянути інцидент / release",pos="430,300!",width=3.5,height=0.62,fixedsize=true];
+    audit [shape=ellipse,label="Перевірити журнал і файл",pos="430,200!",width=3.5,height=0.62,fixedsize=true];
+    emergency [shape=ellipse,label="Пауза / заміна оракула",pos="430,100!",width=3.5,height=0.62,fixedsize=true];
+  }
+  analyze -> record [style=dashed,label="include"];
+  quarantine -> record [style=dashed,label="extend: атака"];
+  quarantine -> enforce [style=dashed,label="include"];
+  owner -> register; owner -> permissions; owner -> review;
+  admin -> register; admin -> emergency; admin -> permissions;
+  gateway -> analyze; gateway -> enforce;
+  ml -> analyze; oracle -> record; auditor -> audit;
+}

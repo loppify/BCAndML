@@ -1,0 +1,27 @@
+digraph SequenceIncident {
+  graph [layout=neato, overlap=false, splines=ortho, bgcolor="white", pad=0.25, fontname="DejaVu Sans", label="Послідовність 2. Від потоку до карантину й ручного зняття", labelloc=t, fontsize=18];
+  node [fontname="DejaVu Sans",fontsize=12,pin=true];
+  edge [fontname="DejaVu Sans",fontsize=10,color="#52606d",arrowsize=0.65];
+  sim [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="Simulator",pos="35,850!",width=1.1,height=0.42,fixedsize=true];
+  pipeline [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="FeaturePipeline",pos="145,850!",width=1.8,height=0.42,fixedsize=true];
+  model [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="RF model",pos="255,850!",width=1.05,height=0.42,fixedsize=true];
+  oracle [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="Oracle",pos="365,850!",width=1.0,height=0.42,fixedsize=true];
+  contract [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="DeviceQuarantine",pos="475,850!",width=1.55,height=0.42,fixedsize=true];
+  db [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="SQLite",pos="585,850!",width=1.0,height=0.42,fixedsize=true];
+  gateway [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="Gateway",pos="695,850!",width=1.0,height=0.42,fixedsize=true];
+  owner [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="Owner",pos="805,850!",width=1.0,height=0.42,fixedsize=true];
+  sim_end [shape=point,style=invis,pos="35,100!",width=0.02]; pipeline_end [shape=point,style=invis,pos="145,100!",width=0.02]; model_end [shape=point,style=invis,pos="255,100!",width=0.02]; oracle_end [shape=point,style=invis,pos="365,100!",width=0.02]; contract_end [shape=point,style=invis,pos="475,100!",width=0.02]; db_end [shape=point,style=invis,pos="585,100!",width=0.02]; gateway_end [shape=point,style=invis,pos="695,100!",width=0.02]; owner_end [shape=point,style=invis,pos="805,100!",width=0.02];
+  sim -> sim_end [style=dashed,arrowhead=none]; pipeline -> pipeline_end [style=dashed,arrowhead=none]; model -> model_end [style=dashed,arrowhead=none]; oracle -> oracle_end [style=dashed,arrowhead=none]; contract -> contract_end [style=dashed,arrowhead=none]; db -> db_end [style=dashed,arrowhead=none]; gateway -> gateway_end [style=dashed,arrowhead=none]; owner -> owner_end [style=dashed,arrowhead=none];
+  m1a [shape=point,style=invis,pos="35,770!",width=0.02]; m1b [shape=point,style=invis,pos="145,770!",width=0.02]; m1a -> m1b [label="1. flow + deviceId"];
+  m2a [shape=point,style=invis,pos="145,710!",width=0.02]; m2b [shape=point,style=invis,pos="585,710!",width=0.02]; m2a -> m2b [label="2. save flow off-chain"];
+  m3a [shape=point,style=invis,pos="145,650!",width=0.02]; m3b [shape=point,style=invis,pos="255,650!",width=0.02]; m3a -> m3b [label="3. 16 features"];
+  m4a [shape=point,style=invis,pos="255,590!",width=0.02]; m4b [shape=point,style=invis,pos="365,590!",width=0.02]; m4a -> m4b [label="4. attack + confidence"];
+  m5a [shape=point,style=invis,pos="365,530!",width=0.02]; m5b [shape=point,style=invis,pos="475,530!",width=0.02]; m5a -> m5b [label="5. recordDecision + hash"];
+  m6a [shape=point,style=invis,pos="475,470!",width=0.02]; m6b [shape=point,style=invis,pos="365,470!",width=0.02]; m6a -> m6b [label="6. DecisionRecorded event"];
+  m7a [shape=point,style=invis,pos="365,410!",width=0.02]; m7b [shape=point,style=invis,pos="585,410!",width=0.02]; m7a -> m7b [label="7. mirror tx hash"];
+  m8a [shape=point,style=invis,pos="695,350!",width=0.02]; m8b [shape=point,style=invis,pos="475,350!",width=0.02]; m8a -> m8b [label="8. deviceStatus"];
+  m9a [shape=point,style=invis,pos="475,290!",width=0.02]; m9b [shape=point,style=invis,pos="695,290!",width=0.02]; m9a -> m9b [label="9. Quarantined"];
+  m10a [shape=point,style=invis,pos="695,230!",width=0.02]; m10b [shape=point,style=invis,pos="35,230!",width=0.02]; m10a -> m10b [label="10. deny command"];
+  m11a [shape=point,style=invis,pos="805,170!",width=0.02]; m11b [shape=point,style=invis,pos="475,170!",width=0.02]; m11a -> m11b [label="11. releaseQuarantine"];
+  m12a [shape=point,style=invis,pos="475,110!",width=0.02]; m12b [shape=point,style=invis,pos="805,110!",width=0.02]; m12a -> m12b [label="12. QuarantineReleased"];
+}

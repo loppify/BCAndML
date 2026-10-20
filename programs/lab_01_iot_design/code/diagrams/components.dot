@@ -1,0 +1,22 @@
+digraph Components {
+  graph [rankdir=TB, bgcolor="white", pad=0.2, nodesep=0.38, ranksep=0.5, fontname="DejaVu Sans", label="Компонентна архітектура та межі довіри", labelloc=t, fontsize=18, compound=true];
+  node [shape=box,style="rounded,filled",fontname="DejaVu Sans",fontsize=12,fillcolor="#edf4fb",color="#386cb0",margin="0.12,0.08"];
+  edge [fontname="DejaVu Sans",fontsize=10,color="#52606d",arrowsize=0.7];
+  subgraph cluster_users { label="Користувачі та середовище"; color="#9fb3c8"; owner [label="Owner / admin",fillcolor="#fff3cd",color="#d9a441"]; device [label="Virtual IoT devices",fillcolor="#fff3cd",color="#d9a441"]; gateway [label="Gateway: permission, status, pause",fillcolor="#fff3cd",color="#d9a441"]; }
+  subgraph cluster_offchain { label="Python runtime"; color="#5aa469"; collector [label="Flow collector / simulator",fillcolor="#e8f5e9",color="#5aa469"]; prep [label="Feature pipeline\nclean + SHA-256",fillcolor="#e8f5e9",color="#5aa469"]; model [label="Random Forest\nP(attack | x)",fillcolor="#e8f5e9",color="#5aa469"]; oracle [label="Oracle signer\nWeb3.py",fillcolor="#e8f5e9",color="#5aa469"]; db [shape=cylinder,label="SQLite / files\nflow + model",fillcolor="#e8f5e9",color="#5aa469"]; }
+  subgraph cluster_chain { label="EVM: Hardhat, then Sepolia"; color="#9061a9"; registry [label="DeviceRegistry",fillcolor="#f2eafa",color="#9061a9"]; access [label="AccessControl",fillcolor="#f2eafa",color="#9061a9"]; quarantine [label="DeviceQuarantine",fillcolor="#f2eafa",color="#9061a9"]; }
+  owner -> registry [label="register"];
+  owner -> access [label="grant / revoke"];
+  device -> collector [label="simulated flow"];
+  collector -> prep -> model;
+  prep -> db [label="off-chain data"];
+  model -> oracle [label="result"];
+  oracle -> quarantine [label="decision + version + hash"];
+  quarantine -> oracle [style=dashed,label="events"];
+  oracle -> db [label="event mirror"];
+  gateway -> access [label="canInteract"];
+  gateway -> quarantine [label="deviceStatus"];
+  gateway -> device [label="allow / deny"];
+  registry -> access [style=dashed,label="ownerOf"];
+  registry -> quarantine [style=dashed,label="ownerOf"];
+}

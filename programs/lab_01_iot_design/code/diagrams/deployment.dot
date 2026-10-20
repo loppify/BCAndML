@@ -1,0 +1,18 @@
+digraph Deployment {
+  graph [rankdir=TB, bgcolor="white", pad=0.25, nodesep=0.45, ranksep=0.5, fontname="DejaVu Sans", label="Діаграма розгортання навчального прототипу", labelloc=t, fontsize=20, compound=true];
+  node [shape=box,style="rounded,filled",fontname="DejaVu Sans",fontsize=13,fillcolor="#edf4fb",color="#386cb0"];
+  edge [fontname="DejaVu Sans",fontsize=11,color="#52606d",arrowsize=0.75];
+  subgraph cluster_client {label="Клієнтський комп'ютер";color="#9fb3c8"; owner [label="Browser / CLI\nowner + admin"] ; sim [label="Python virtual IoT\nsimulator"] ;}
+  subgraph cluster_python {label="Python runtime (localhost)";color="#5aa469"; api [label="FastAPI\nprojected for LR3",fillcolor="#e8f5e9",color="#5aa469"]; pipeline [label="preprocess + SHA-256",fillcolor="#e8f5e9",color="#5aa469"]; model [label="Random Forest\nmodel.joblib",fillcolor="#e8f5e9",color="#5aa469"]; oracle [label="Oracle signer\nWeb3.py + env key",fillcolor="#e8f5e9",color="#5aa469"]; sqlite [shape=cylinder,label="SQLite\nflows + incident metadata",fillcolor="#e8f5e9",color="#5aa469"];}
+  subgraph cluster_evm {label="Local Hardhat EVM (LR2), Sepolia testnet (deployment check)";color="#9061a9"; rpc [label="JSON-RPC endpoint",fillcolor="#f2eafa",color="#9061a9"]; registry [label="DeviceRegistry",fillcolor="#f2eafa",color="#9061a9"]; ac [label="AccessControl",fillcolor="#f2eafa",color="#9061a9"]; quarantine [label="DeviceQuarantine",fillcolor="#f2eafa",color="#9061a9"];} 
+  sim -> pipeline [label="flow record"];
+  owner -> api [label="HTTPS/localhost"];
+  api -> sqlite [label="read/write off-chain"];
+  pipeline -> model [label="features"];
+  model -> oracle [label="result"];
+  oracle -> rpc [label="signed transaction"];
+  rpc -> registry [label="EVM calls"];
+  rpc -> ac [label="EVM calls"];
+  rpc -> quarantine [label="decision + hash"];
+  quarantine -> api [label="events / audit mirror",style=dashed];
+}

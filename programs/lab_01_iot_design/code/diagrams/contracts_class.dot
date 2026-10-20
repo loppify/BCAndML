@@ -1,0 +1,12 @@
+digraph Contracts {
+  graph [rankdir=TB, bgcolor="white", pad=0.2, nodesep=0.35, ranksep=0.35, fontname="DejaVu Sans", label="Діаграма класів смарт-контрактів", labelloc=t, fontsize=18];
+  node [shape=plain,fontname="DejaVu Sans",fontsize=12];
+  edge [fontname="DejaVu Sans",fontsize=11,color="#52606d",arrowsize=0.75];
+  registry [label=<<table BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5" COLOR="#386cb0" BGCOLOR="#f7fbff"><tr><td BGCOLOR="#dbeafe"><b>DeviceRegistry</b></td></tr><tr><td ALIGN="LEFT">State: ownerOf[id], metadataHash[id],<br/>registered[id]</td></tr><tr><td ALIGN="LEFT">registerDevice(id, hash)<br/>updateOwner(id, newOwner)<br/>ownerOfDevice(id), exists(id)</td></tr><tr><td ALIGN="LEFT">Events: DeviceRegistered, OwnerChanged<br/>Access: msg.sender becomes owner</td></tr></table>>];
+  access [label=<<table BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5" COLOR="#386cb0" BGCOLOR="#f7fbff"><tr><td BGCOLOR="#dbeafe"><b>AccessControl</b></td></tr><tr><td ALIGN="LEFT">State: allowed[id][actor], GATEWAY_ROLE</td></tr><tr><td ALIGN="LEFT">grantAccess(id, actor)<br/>revokeAccess(id, actor)<br/>canInteract(id, actor)</td></tr><tr><td ALIGN="LEFT">Events: AccessGranted, AccessRevoked<br/>Access: owner(id), ADMIN_ROLE,<br/>GATEWAY_ROLE for canInteract</td></tr></table>>];
+  quarantine [label=<<table BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5" COLOR="#386cb0" BGCOLOR="#f7fbff"><tr><td BGCOLOR="#dbeafe"><b>DeviceQuarantine</b></td></tr><tr><td ALIGN="LEFT">State: status[id], oracle, paused,<br/>modelHash[version], incidents[id]<br/>CONFIDENCE_THRESHOLD = 5000 (50%)</td></tr><tr><td ALIGN="LEFT">registerModel(version, hash)<br/>recordDecision(id, attack, confidence,<br/>version, inputHash)<br/>releaseQuarantine(id), replaceOracle(addr)<br/>pause(), unpause(), deviceStatus(id)</td></tr><tr><td ALIGN="LEFT">Events: DecisionRecorded, DeviceQuarantined,<br/>QuarantineReleased, OracleChanged<br/>Access: ORACLE / owner(id) / ADMIN</td></tr></table>>];
+  device_state [shape=note,label="DeviceState = Unregistered | Active | Quarantined\nПереходи: register, confirmed attack, owner release",color="#d9a441",fillcolor="#fff8e6"];
+  registry -> access [label="ownerOf / exists"];
+  registry -> quarantine [label="ownerOf / exists"];
+  quarantine -> device_state [style=dashed,label="state machine"];
+}

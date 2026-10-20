@@ -1,0 +1,26 @@
+digraph MLPipeline {
+  graph [rankdir=TB, bgcolor="white", pad=0.25, nodesep=0.42, ranksep=0.45, fontname="DejaVu Sans", label="Конвеєр даних і рішення моделі", labelloc=t, fontsize=20];
+  node [shape=box,style="rounded,filled",fontname="DejaVu Sans",fontsize=13,fillcolor="#edf4fb",color="#386cb0",margin="0.14,0.10"];
+  edge [fontname="DejaVu Sans",fontsize=11,color="#52606d",arrowsize=0.75];
+  raw [label="Потік з симульованого\nIoT-пристрою"];
+  validate [label="Перевірка схеми\n+ анонімізація IP"];
+  clean [label="Очищення пропусків\n+ точних повторів"];
+  split [label="Group split by src_ip\ntrain / test"];
+  features [label="16 числових ознак\nбез label, type, IP"];
+  model [label="Random Forest\n+ поріг впевненості"];
+  hash [label="SHA-256 канонічного\nвектора ознак"];
+  oracle [label="Oracle wallet\nпідпис транзакції"];
+  chain [label="DeviceQuarantine\nresult + version + hash"];
+  db [shape=cylinder,label="SQLite / файли\nпотік + пояснення + модель",fillcolor="#e8f5e9",color="#5aa469"];
+  gateway [label="Gateway policy\nAccessControl + deviceStatus\n+ systemPaused"];
+  normal [shape=ellipse,label="Дозволити\nкоманду",fillcolor="#e8f5e9",color="#5aa469"];
+  attack [shape=ellipse,label="Відхилити\nкоманду",fillcolor="#ffe8e8",color="#c23b4a"];
+  raw -> validate -> clean -> features -> model;
+  clean -> db [label="дані поза ланцюгом"];
+  split -> features [label="train / validation"];
+  model -> hash [label="classification + confidence"];
+  hash -> oracle -> chain [label="version + input hash"];
+  chain -> gateway [label="status"];
+  gateway -> normal [label="Active + authorized"];
+  gateway -> attack [label="Quarantined / denied"];
+}

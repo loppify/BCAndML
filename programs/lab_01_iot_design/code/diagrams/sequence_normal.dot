@@ -1,0 +1,24 @@
+digraph SequenceNormal {
+  graph [layout=neato, overlap=false, splines=ortho, bgcolor="white", pad=0.25, fontname="DejaVu Sans", label="Послідовність 1. Реєстрація та дозволений доступ", labelloc=t, fontsize=18];
+  node [fontname="DejaVu Sans",fontsize=13,pin=true];
+  edge [fontname="DejaVu Sans",fontsize=11,color="#52606d",arrowsize=0.65];
+  owner [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="Власник",pos="50,850!",width=1.05,height=0.42,fixedsize=true];
+  registry [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="DeviceRegistry",pos="180,850!",width=1.8,height=0.42,fixedsize=true];
+  access [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="AccessControl",pos="320,850!",width=1.35,height=0.42,fixedsize=true];
+  device [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="VirtualDevice",pos="460,850!",width=1.3,height=0.42,fixedsize=true];
+  gateway [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="Gateway",pos="600,850!",width=1.05,height=0.42,fixedsize=true];
+  quarantine [shape=box,style="rounded,filled",fillcolor="#edf4fb",label="DeviceQuarantine",pos="740,850!",width=2.0,height=0.42,fixedsize=true];
+  owner_end [shape=point,style=invis,pos="50,100!",width=0.02]; registry_end [shape=point,style=invis,pos="180,100!",width=0.02]; access_end [shape=point,style=invis,pos="320,100!",width=0.02]; device_end [shape=point,style=invis,pos="460,100!",width=0.02]; gateway_end [shape=point,style=invis,pos="600,100!",width=0.02]; quarantine_end [shape=point,style=invis,pos="740,100!",width=0.02];
+  owner -> owner_end [style=dashed,arrowhead=none]; registry -> registry_end [style=dashed,arrowhead=none]; access -> access_end [style=dashed,arrowhead=none]; device -> device_end [style=dashed,arrowhead=none]; gateway -> gateway_end [style=dashed,arrowhead=none]; quarantine -> quarantine_end [style=dashed,arrowhead=none];
+  m1a [shape=point,style=invis,pos="50,760!",width=0.02]; m1b [shape=point,style=invis,pos="180,760!",width=0.02]; m1a -> m1b [label="1. registerDevice(id, hash)"];
+  m2a [shape=point,style=invis,pos="180,700!",width=0.02]; m2b [shape=point,style=invis,pos="50,700!",width=0.02]; m2a -> m2b [label="2. DeviceRegistered"];
+  m3a [shape=point,style=invis,pos="50,640!",width=0.02]; m3b [shape=point,style=invis,pos="320,640!",width=0.02]; m3a -> m3b [label="3. grantAccess"];
+  m4a [shape=point,style=invis,pos="320,580!",width=0.02]; m4b [shape=point,style=invis,pos="50,580!",width=0.02]; m4a -> m4b [label="4. AccessGranted"];
+  m5a [shape=point,style=invis,pos="460,520!",width=0.02]; m5b [shape=point,style=invis,pos="600,520!",width=0.02]; m5a -> m5b [label="5. command"];
+  m6a [shape=point,style=invis,pos="600,460!",width=0.02]; m6b [shape=point,style=invis,pos="320,460!",width=0.02]; m6a -> m6b [label="6. canInteract"];
+  m7a [shape=point,style=invis,pos="320,400!",width=0.02]; m7b [shape=point,style=invis,pos="180,400!",width=0.02]; m7a -> m7b [label="7. ownerOf / exists"];
+  m8a [shape=point,style=invis,pos="180,340!",width=0.02]; m8b [shape=point,style=invis,pos="320,340!",width=0.02]; m8a -> m8b [label="8. registered + owner"];
+  m9a [shape=point,style=invis,pos="600,280!",width=0.02]; m9b [shape=point,style=invis,pos="740,280!",width=0.02]; m9a -> m9b [label="9. deviceStatus"];
+  m10a [shape=point,style=invis,pos="740,220!",width=0.02]; m10b [shape=point,style=invis,pos="600,220!",width=0.02]; m10a -> m10b [label="10. Active"];
+  m11a [shape=point,style=invis,pos="600,160!",width=0.02]; m11b [shape=point,style=invis,pos="460,160!",width=0.02]; m11a -> m11b [label="11. forward command"];
+}

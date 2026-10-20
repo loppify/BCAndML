@@ -1,0 +1,15 @@
+digraph DeviceState {
+  graph [rankdir=TB, bgcolor="white", pad=0.3, nodesep=0.5, ranksep=0.5, fontname="DejaVu Sans", label="Автомат станів IoT-пристрою", labelloc=t, fontsize=20];
+  node [shape=ellipse,style="filled",fontname="DejaVu Sans",fontsize=15,color="#386cb0",fillcolor="#edf4fb",width=2.8,height=1.0];
+  edge [fontname="DejaVu Sans",fontsize=12,color="#52606d",arrowsize=0.8];
+  start [shape=point,label="",width=0.15];
+  unregistered [label="Unregistered"];
+  active [label="Active"];
+  quarantined [label="Quarantined",fillcolor="#ffe8e8",color="#c23b4a"];
+  start -> unregistered [label="genesis"];
+  unregistered -> active [label="owner registers id\n+ metadata hash"];
+  active -> quarantined [label="oracle: attack = true\nconfidence >= threshold"];
+  quarantined -> active [label="owner manually releases\n+ audit event"];
+  active -> active [label="normal decision /\naccess policy change"];
+  quarantined -> quarantined [label="more incident evidence\nstatus remains blocked"];
+}
