@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { JsonRpcProvider, Contract } = require("ethers");
 const fs = require("node:fs");
 const path = require("node:path");
