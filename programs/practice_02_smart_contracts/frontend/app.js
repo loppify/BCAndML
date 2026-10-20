@@ -78,10 +78,15 @@ function renderCampaign(campaign, id) {
   const end = document.createElement("p"); end.className = "muted"; end.textContent = `Дедлайн: ${new Date(Number(campaign.deadline) * 1000).toLocaleString("uk-UA")}`;
   card.append(title, info, goalLine, meter, end);
   if (Number(campaign.status) === 0) {
-    const form = document.createElement("form");
-    const amount = document.createElement("input"); amount.type = "number"; amount.min = "0.000000000000000001"; amount.step = "any"; amount.placeholder = "ETH"; amount.required = true;
-    const submit = document.createElement("button"); submit.textContent = "Внести";
-    form.append(amount, submit); form.addEventListener("submit", async (event) => { event.preventDefault(); await transaction(hub.contribute(id, { value: ethers.parseEther(amount.value) }), "Внесок"); }); card.append(form);
+    if (Number(campaign.deadline) <= Math.floor(Date.now() / 1000)) {
+      const finalize = document.createElement("button"); finalize.className = "secondary"; finalize.textContent = "Завершити кампанію";
+      finalize.onclick = () => transaction(hub.finalize(id), "Фіналізація кампанії"); card.append(finalize);
+    } else {
+      const form = document.createElement("form");
+      const amount = document.createElement("input"); amount.type = "number"; amount.min = "0.000000000000000001"; amount.step = "any"; amount.placeholder = "ETH"; amount.required = true;
+      const submit = document.createElement("button"); submit.textContent = "Внести";
+      form.append(amount, submit); form.addEventListener("submit", async (event) => { event.preventDefault(); await transaction(hub.contribute(id, { value: ethers.parseEther(amount.value) }), "Внесок"); }); card.append(form);
+    }
   }
   if (Number(campaign.status) === 2) {
     const refund = document.createElement("button"); refund.className = "secondary"; refund.textContent = "Повернути внесок";
