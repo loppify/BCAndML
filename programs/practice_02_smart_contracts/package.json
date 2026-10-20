@@ -1,0 +1,26 @@
+{
+  "name": "nure-practice-02-crowdfunding",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage",
+    "gas": "REPORT_GAS=true hardhat test test/gas.test.js",
+    "gas:full": "REPORT_GAS=true hardhat test",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "index": "node scripts/index-events.js",
+    "demo:local": "node scripts/run-local-demo.js"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "5.2.0",
+    "@openzeppelin/contracts-upgradeable": "5.2.0",
+    "@openzeppelin/hardhat-upgrades": "^3.9.1",
+    "dotenv": "^16.4.7",
+    "hardhat": "^2.26.3",
+    "hardhat-gas-reporter": "^1.0.10",
+    "solidity-coverage": "^0.8.16"
+  }
+}

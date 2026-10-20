@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CrowdFund | Підтримка кампаній</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.5/ethers.umd.min.js"></script>
+  <script src="public/config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header><div><p class="eyebrow">ДЕЦЕНТРАЛІЗОВАНИЙ ЗАСТОСУНОК</p><h1>CrowdFund</h1><p>Краудфандинг із поверненням внесків та токенами винагород.</p></div>
+    <button id="connect">Підключити MetaMask</button></header>
+  <main>
+    <section class="toolbar"><div id="network" class="notice">Підключіть гаманець, щоб перевірити мережу.</div><button id="refresh">Оновити кампанії</button></section>
+    <section id="createPanel" class="panel hidden"><h2>Створити кампанію</h2><form id="createForm">
+      <label>Мета, ETH<input name="goal" type="number" min="0.000000000000000001" step="any" required></label>
+      <label>Дедлайн, годин від зараз<input name="hours" type="number" min="1" max="8760" value="24" required></label>
+      <label>URI опису<input name="uri" type="text" placeholder="ipfs://..." required></label>
+      <button type="submit">Створити</button>
+    </form></section>
+    <p id="status" role="status" aria-live="polite">Оберіть дію після підключення гаманця.</p>
+    <section><div class="section-title"><h2>Кампанії</h2><span id="account"></span></div><div id="campaigns" class="grid"></div></section>
+    <section><div class="section-title"><h2>Історія подій</h2><button id="historyRefresh">Оновити історію</button></div><ol id="history" class="history"></ol></section>
+  </main>
+  <footer>Навчальна тестова система. Кошти в мережі Sepolia не мають ринкової вартості.</footer>
+</body>
+</html>

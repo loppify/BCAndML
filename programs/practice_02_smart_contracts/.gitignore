@@ -1,0 +1,13 @@
+node_modules/
+.env*
+!.env.example
+cache/
+build/
+artifacts/
+coverage/
+coverage.json
+deployments/
+images/
+frontend/public/config.js
+frontend/public/CrowdfundingHub.json
+frontend/public/history.json
