@@ -19,6 +19,9 @@ async function ready() {
 }
 
 async function main() {
+  const localHistory = path.join(root, "frontend/public/history.json");
+  fs.mkdirSync(path.dirname(localHistory), { recursive: true });
+  fs.writeFileSync(localHistory, "[]\n", "utf8");
   const node = spawn(hardhat, ["node", "--hostname", "127.0.0.1"], { cwd: root, stdio: "ignore" });
   try {
     await ready();

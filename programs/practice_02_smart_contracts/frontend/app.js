@@ -112,7 +112,8 @@ function subscribeEvents() {
 async function refreshHistory() {
   const list = $("#history");
   try {
-    const entries = await fetch("public/history.json", { cache: "no-store" }).then((r) => r.ok ? r.json() : []);
+    const historyFile = window.CROWD_CONFIG.network === "localhost" ? "history.json" : `history-${window.CROWD_CONFIG.network}.json`;
+    const entries = await fetch(`public/${historyFile}`, { cache: "no-store" }).then((r) => r.ok ? r.json() : []);
     list.replaceChildren();
     entries.slice(-30).reverse().forEach((entry) => {
       const item = document.createElement("li"); item.textContent = `Блок ${entry.blockNumber}: ${entry.event} · `;
