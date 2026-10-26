@@ -1,0 +1,25 @@
+{
+  "train_rows": 136471,
+  "validation_rows": 24852,
+  "test_rows": 29151,
+  "train_groups": 36,
+  "validation_groups": 6,
+  "test_groups": 9,
+  "group_overlap_counts": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "train_class_counts": {
+    "0": 30224,
+    "1": 106247
+  },
+  "validation_class_counts": {
+    "0": 5078,
+    "1": 19774
+  },
+  "test_class_counts": {
+    "0": 6738,
+    "1": 22413
+  }
+}

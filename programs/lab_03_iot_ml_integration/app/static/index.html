@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IoT IDS | ЛР 3</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">IDS</span><div><strong>IoT Quarantine</strong><small>Лабораторна робота № 3</small></div></div>
+    <div class="topbar-actions">
+      <span id="network-pill" class="pill warn">Перевірка мережі...</span>
+      <button id="connect-wallet" class="button primary">Підключити гаманець</button>
+      <div id="wallet-info" class="wallet-info hidden"><span id="role-pill" class="pill">Гість</span><span id="wallet-address"></span></div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-label">РОБОЧЕ МІСЦЕ</div>
+      <nav id="navigation">
+        <button class="nav-item active" data-view="overview"><span>▦</span> Огляд системи</button>
+        <button class="nav-item" data-view="devices"><span>◉</span> Пристрої</button>
+        <button class="nav-item" data-view="decision"><span>⌁</span> Аналіз потоку</button>
+        <button class="nav-item" data-view="audit"><span>☷</span> Аудит блокчейну</button>
+        <button class="nav-item" data-view="integrity"><span>◇</span> Цілісність даних</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <span class="status-dot"></span><span id="api-status">Підключення до API...</span>
+        <small id="oracle-health">Оракул перевіряється</small>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section id="view-overview" class="view active">
+        <div class="page-heading"><div><p class="eyebrow">ПАНЕЛЬ КЕРУВАННЯ</p><h1>Огляд системи</h1><p class="muted">Машинне навчання, EVM та аудит в одному локальному інтерфейсі.</p></div><button id="refresh-all" class="button ghost">Оновити дані</button></div>
+        <div class="metric-grid">
+          <article class="metric-card"><div class="metric-icon blue">◈</div><div class="metric-label">Модель</div><div id="model-version" class="metric-value">-</div><div id="model-hash-short" class="metric-foot mono">Завантаження артефакту</div></article>
+          <article class="metric-card"><div class="metric-icon green">◉</div><div class="metric-label">Пристрої в реєстрі</div><div id="device-count" class="metric-value">0</div><div class="metric-foot">Актуальний стан читається з EVM</div></article>
+          <article class="metric-card"><div class="metric-icon purple">⌁</div><div class="metric-label">Інциденти в ланцюгу</div><div id="decision-count" class="metric-value">0</div><div class="metric-foot">Журнал подій контракту карантину</div></article>
+          <article class="metric-card"><div class="metric-icon amber">⟳</div><div class="metric-label">Оракул</div><div id="oracle-state" class="metric-value compact">Готовий</div><div id="oracle-last-action" class="metric-foot">Очікує потік</div></article>
+        </div>
+        <div class="two-column overview-grid">
+          <article class="panel"><div class="panel-heading"><div><h2>Наскрізний сценарій</h2><p>Від потоку до аудиторської події</p></div><span class="pill success">LOCAL EVM</span></div>
+            <ol class="steps"><li><span>1</span><div><strong>Під'єднати гаманець</strong><small>Локальна мережа Hardhat, chain ID 31337</small></div></li><li><span>2</span><div><strong>Зареєструвати пристрій</strong><small>Псевдонімний ID та хеш метаданих</small></div></li><li><span>3</span><div><strong>Передати потік моделі</strong><small>16 числових ознак, без мітки та IP-адрес</small></div></li><li><span>4</span><div><strong>Записати рішення в EVM</strong><small>Клас, впевненість, версія та SHA-256</small></div></li><li><span>5</span><div><strong>Переглянути аудит</strong><small>Події безпосередньо з контракту</small></div></li></ol>
+          </article>
+          <article class="panel"><div class="panel-heading"><div><h2>Останні рішення</h2><p>Оновлюється з журналу блокчейну</p></div><button class="text-button" data-open="audit">Увесь аудит →</button></div><div id="recent-decisions" class="decision-list"><div class="empty-state">Ще немає записаних рішень.</div></div></article>
+        </div>
+        <article class="panel model-panel"><div class="panel-heading"><div><h2>Картка моделі</h2><p>Артефакт і тестова оцінка на групово відкладених джерелах</p></div><span class="pill blue" id="registered-model-pill">MODEL 2</span></div><div id="model-summary" class="model-summary"><div class="empty-state">Завантаження картки моделі...</div></div></article>
+      </section>
+
+      <section id="view-devices" class="view">
+        <div class="page-heading"><div><p class="eyebrow">РОЛЬ: ВЛАСНИК / АДМІНІСТРАТОР</p><h1>Віртуальні пристрої</h1><p class="muted">Реєстрація, дозволи та перевірка стану перед командою шлюзу.</p></div></div>
+        <div class="two-column">
+          <article class="panel"><div class="panel-heading"><div><h2>Зареєструвати пристрій</h2><p>Транзакція підписується під'єднаним гаманцем.</p></div></div><form id="register-device-form" class="form-stack"><label>Назва пристрою<input id="device-name" required maxlength="80" value="Віртуальний датчик температури"></label><button class="button primary" type="submit">Зареєструвати в реєстрі</button></form><div id="device-tx-status" class="notice hidden"></div></article>
+          <article class="panel"><div class="panel-heading"><div><h2>Надати тимчасовий доступ</h2><p>Дозвіл записується в AccessControl.</p></div></div><form id="grant-access-form" class="form-stack"><label>Пристрій<select id="grant-device" required></select></label><label>Адреса оператора<input id="actor-address" spellcheck="false" required></label><label>Строк дії, годин<input id="expiry-hours" type="number" min="1" max="720" value="24" required></label><button class="button secondary" type="submit">Надати дозвіл</button></form><div id="access-tx-status" class="notice hidden"></div></article>
+        </div>
+        <article class="panel"><div class="panel-heading"><div><h2>Реєстр пристроїв</h2><p>Ідентифікатор і поточний статус отримуються з контрактів.</p></div><button id="refresh-devices" class="button ghost small">Оновити</button></div><div class="table-wrap"><table><thead><tr><th>Назва</th><th>Device ID</th><th>Власник</th><th>Стан</th><th>Дія</th></tr></thead><tbody id="device-table"><tr><td colspan="5" class="empty-cell">Пристроїв ще не зареєстровано.</td></tr></tbody></table></div></article>
+        <article class="panel gateway-panel"><div class="panel-heading"><div><h2>Перевірка шлюзу</h2><p>Команда дозволяється лише за активного пристрою й чинного дозволу.</p></div></div><form id="gateway-check-form" class="inline-form"><label>Пристрій<select id="gateway-device" required></select></label><label>Актор<input id="gateway-actor" required spellcheck="false"></label><button class="button ghost" type="submit">Перевірити політику</button></form><div id="gateway-result" class="notice hidden"></div></article>
+      </section>
+
+      <section id="view-decision" class="view">
+        <div class="page-heading"><div><p class="eyebrow">КЛАСИФІКАЦІЯ ТА ОРАКУЛ</p><h1>Аналіз мережевого потоку</h1><p class="muted">Тестовий потік з відкладеної групи проходить той самий API-конвеєр, що й введені ознаки.</p></div><span class="pill blue" id="decision-model-badge">RANDOM FOREST</span></div>
+        <div class="two-column decision-layout">
+          <article class="panel"><div class="panel-heading"><div><h2>Вхідні дані</h2><p>Мітки, типи атак та IP-адреси не передаються моделі.</p></div></div><form id="inference-form" class="form-stack"><label>Пристрій<select id="inference-device" required></select></label><label>Приклад із тестової вибірки<select id="demo-sample" required></select></label><div id="feature-preview" class="feature-preview">Оберіть приклад, щоб побачити числові ознаки.</div><button class="button primary wide" type="submit">Класифікувати та записати рішення</button></form><div id="inference-status" class="notice hidden"></div></article>
+          <article id="decision-result" class="panel result-panel"><div class="empty-state large"><span class="empty-icon">⌁</span><strong>Очікується аналіз</strong><p>Результат, локальне пояснення і хеш транзакції з'являться після обробки.</p></div></article>
+        </div>
+        <article class="panel"><div class="panel-heading"><div><h2>Перевірка шлюзової політики</h2><p>Після карантину система має відхилити команду цьому пристрою.</p></div><button id="check-last-gateway" class="button ghost small">Перевірити останній пристрій</button></div><div id="last-gateway-result" class="notice hidden"></div></article>
+      </section>
+
+      <section id="view-audit" class="view">
+        <div class="page-heading"><div><p class="eyebrow">ДАНІ БЕЗПОСЕРЕДНЬО З EVM</p><h1>Аудит рішень</h1><p class="muted">Події читаються з контрактів, а не з кешу інтерфейсу.</p></div><button id="refresh-audit" class="button ghost">Оновити журнал</button></div>
+        <div class="audit-summary"><div><span class="status-dot green-dot"></span><span id="audit-source">Джерело: контрактні події</span></div><div id="audit-count">0 подій</div></div>
+        <article class="panel"><div class="table-wrap"><table><thead><tr><th>Блок</th><th>Подія</th><th>Пристрій / версія</th><th>Дані рішення</th><th>Transaction hash</th></tr></thead><tbody id="audit-table"><tr><td colspan="5" class="empty-cell">Завантаження журналу...</td></tr></tbody></table></div></article>
+        <article class="panel monitor-panel"><div class="panel-heading"><div><h2>Моніторинг оракула</h2><p>Стан сервісу та час останньої успішної транзакції.</p></div><span id="monitor-pill" class="pill success">READY</span></div><div id="monitor-details" class="monitor-details"></div></article>
+      </section>
+
+      <section id="view-integrity" class="view">
+        <div class="page-heading"><div><p class="eyebrow">OFF-CHAIN / ON-CHAIN</p><h1>Цілісність даних</h1><p class="muted">SHA-256 канонічного потоку звіряється з хешем рішення в EVM.</p></div></div>
+        <div class="two-column">
+          <article class="panel"><div class="panel-heading"><div><h2>Вибрати оброблений потік</h2><p>Відновити збережений JSON для перевірки.</p></div></div><div class="form-stack"><label>Потік<select id="integrity-flow"></select></label><button id="load-integrity-payload" class="button secondary">Завантажити payload</button></div></article>
+          <article class="panel"><div class="panel-heading"><div><h2>Результат перевірки</h2><p>Змінений байт має дати невідповідність.</p></div></div><div id="integrity-result" class="integrity-result empty-state">Оберіть потік і перевірте його файл.</div></article>
+        </div>
+        <article class="panel"><div class="panel-heading"><div><h2>Канонічний JSON</h2><p>Можна змінити значення, щоб перевірити контроль підміни.</p></div></div><textarea id="integrity-json" rows="12" spellcheck="false" placeholder="Натисніть «Завантажити payload»"></textarea><button id="check-integrity" class="button primary">Обчислити SHA-256 і звірити</button></article>
+      </section>
+
+      <footer class="footer">Навчальна система IoT IDS · Hardhat local · Рішення автоматично фіксуються з версією моделі та digest даних.</footer>
+    </main>
+  </div>
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

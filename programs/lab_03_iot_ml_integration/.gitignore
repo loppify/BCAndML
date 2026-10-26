@@ -1,0 +1,14 @@
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+node_modules/
+build/
+cache/
+coverage/
+coverage.json
+artifacts/iot_ids.sqlite3*
+artifacts/*.log
+deployments/localhost.json
+data/raw/*.csv

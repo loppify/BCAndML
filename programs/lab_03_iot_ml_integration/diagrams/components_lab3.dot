@@ -1,0 +1,39 @@
+digraph ComponentsLab3 {
+  graph [rankdir=TB, bgcolor="white", pad=0.25, nodesep=0.38, ranksep=0.52,
+         fontname="DejaVu Sans", label="Компонентна архітектура ЛР 3: ML, oracle та браузерна взаємодія",
+         labelloc=t, fontsize=19, compound=true, splines=polyline];
+  node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=11,
+        margin="0.12,0.08", color="#92a4bb", fillcolor="#f7f9fc"];
+  edge [fontname="DejaVu Sans", fontsize=9, color="#56657a", arrowsize=0.68];
+
+  actors [label="Користувачі\nOwner / Admin / Auditor", fillcolor="#fff4d9", color="#d4a74e"];
+  browser [label="Web UI\nEIP-1193 wallet\nDecision / Audit / Integrity", fillcolor="#edf3ff", color="#4774bf"];
+  api [label="FastAPI\nOpenAPI / validation / results", fillcolor="#eaf4ff", color="#4774bf"];
+  dataset [shape=folder, label="ToN_IoT Network\ntrain / validation / test by src_ip", fillcolor="#f5f7fa", color="#93a0b2"];
+  pipeline [label="FeaturePipeline\n16 numeric features / impute / canonical JSON / SHA-256", fillcolor="#e8f5e9", color="#5aa469"];
+  model [label="IDS models\nRandom Forest primary\nLogistic Regression baseline\nSHAP per-decision explanation", fillcolor="#fff7e5", color="#d2a144"];
+  oracle [label="OracleService\nregistered model v2\nORACLE_ROLE + retry + deduplication", fillcolor="#e8f5e9", color="#5aa469"];
+  evm [label="Local EVM contracts\nDeviceRegistry | AccessControl | DeviceQuarantine", fillcolor="#f3ecfb", color="#9061a9"];
+  indexer [label="EventIndexer\nreads contract event logs", fillcolor="#eff4f7", color="#7793a4"];
+  sqlite [shape=cylinder, label="SQLiteRepository\nflow / prediction / model metadata\nidempotent event mirror", fillcolor="#eff4f7", color="#7793a4"];
+  gateway [label="GatewayService\ncanInteract + deviceStatus + pause", fillcolor="#fff4d9", color="#d4a74e"];
+  devices [label="Virtual IoT devices\ncommand allow / deny", fillcolor="#fff4d9", color="#d4a74e"];
+
+  actors -> browser -> api -> pipeline -> model -> oracle -> evm -> indexer -> sqlite -> gateway -> devices
+    [style=invis, weight=50];
+
+  actors -> browser [label="role-specific screens"];
+  browser -> api [label="flow / analytics / integrity"];
+  browser -> evm [label="owner-signed transactions; read audit", constraint=false];
+  dataset -> pipeline [label="selected numeric fields"];
+  api -> pipeline [label="schema-validated request"];
+  pipeline -> model [label="imputed feature vector"];
+  model -> oracle [label="class + probability + SHAP factors"];
+  pipeline -> sqlite [label="canonical off-chain flow"];
+  oracle -> evm [label="recordDecision(result, bps, version, hash)"];
+  evm -> indexer [label="DecisionRecorded / DeviceQuarantined"];
+  indexer -> sqlite [label="mirror by txHash + logIndex"];
+  api -> browser [label="result + explanation + tx hash", constraint=false];
+  gateway -> evm [label="permission + status + pause", constraint=false];
+  gateway -> devices [label="forward or deny command"];
+}

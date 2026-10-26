@@ -1,0 +1,369 @@
+{
+  "data": {
+    "source_file": "ton_iot_network.csv",
+    "rows_loaded": 211043,
+    "columns_loaded": 44,
+    "duplicates_removed": 20569,
+    "rows_after_deduplication": 190474,
+    "missing_values_before_imputation": 0,
+    "nonfinite_or_nonnumeric_values_converted_to_missing": 0,
+    "missing_feature_cells_to_impute": 0,
+    "class_counts": {
+      "0": 42040,
+      "1": 148434
+    },
+    "source_groups": 51,
+    "feature_names": [
+      "src_port",
+      "dst_port",
+      "duration",
+      "src_bytes",
+      "dst_bytes",
+      "missed_bytes",
+      "src_pkts",
+      "src_ip_bytes",
+      "dst_pkts",
+      "dst_ip_bytes",
+      "dns_qclass",
+      "dns_qtype",
+      "dns_rcode",
+      "http_request_body_len",
+      "http_response_body_len",
+      "http_status_code"
+    ],
+    "excluded_fields": [
+      "dst_ip",
+      "label",
+      "src_ip",
+      "type"
+    ],
+    "random_seed": 42,
+    "train_rows": 136471,
+    "validation_rows": 24852,
+    "test_rows": 29151,
+    "train_groups": 36,
+    "validation_groups": 6,
+    "test_groups": 9,
+    "group_overlap_counts": {
+      "train_validation": 0,
+      "train_test": 0,
+      "validation_test": 0
+    },
+    "train_class_counts": {
+      "0": 30224,
+      "1": 106247
+    },
+    "validation_class_counts": {
+      "0": 5078,
+      "1": 19774
+    },
+    "test_class_counts": {
+      "0": 6738,
+      "1": 22413
+    }
+  },
+  "best_hyperparameters": {
+    "random_forest": {
+      "n_estimators": 50,
+      "max_depth": 18,
+      "min_samples_leaf": 2
+    },
+    "logistic_regression": {
+      "C": 1.0
+    }
+  },
+  "test_metrics": {
+    "Logistic Regression": {
+      "accuracy": 0.8648759905320572,
+      "precision_attack": 0.8964377682403434,
+      "recall_attack": 0.9319145138981841,
+      "f1_attack": 0.9138319515236366,
+      "false_positive_rate": 0.3581181359453844,
+      "false_negative_rate": 0.0680854861018159,
+      "pr_auc": 0.7803197192840448,
+      "roc_auc": 0.6752832763318187,
+      "confusion_matrix": [
+        [
+          4325,
+          2413
+        ],
+        [
+          1526,
+          20887
+        ]
+      ]
+    },
+    "Random Forest": {
+      "accuracy": 0.942231827381565,
+      "precision_attack": 0.9304730655812601,
+      "recall_attack": 0.9995538303663053,
+      "f1_attack": 0.9637771563777157,
+      "false_positive_rate": 0.24844167408726625,
+      "false_negative_rate": 0.00044616963369473075,
+      "pr_auc": 0.9973728594448124,
+      "roc_auc": 0.9913047213183281,
+      "confusion_matrix": [
+        [
+          5064,
+          1674
+        ],
+        [
+          10,
+          22403
+        ]
+      ]
+    },
+    "Signature rules": {
+      "accuracy": 0.17481390003773456,
+      "precision_attack": 0.001215066828675577,
+      "recall_attack": 8.923392673894615e-05,
+      "f1_attack": 0.0001662579492081965,
+      "false_positive_rate": 0.2439893143365984,
+      "false_negative_rate": 0.999910766073261,
+      "pr_auc": 0.7687902013894051,
+      "roc_auc": 0.3780499597950703,
+      "confusion_matrix": [
+        [
+          5094,
+          1644
+        ],
+        [
+          22411,
+          2
+        ]
+      ]
+    }
+  },
+  "cross_validation": {
+    "Logistic Regression": [
+      {
+        "fold": 1,
+        "precision_attack": 0.9753539403268243,
+        "recall_attack": 0.9006826107796307,
+        "f1_attack": 0.9365322150995927,
+        "pr_auc": 0.9754510496862856
+      },
+      {
+        "fold": 2,
+        "precision_attack": 0.9755373556024463,
+        "recall_attack": 0.9018382596045759,
+        "f1_attack": 0.9372412252821826,
+        "pr_auc": 0.977684364594246
+      },
+      {
+        "fold": 3,
+        "precision_attack": 0.920976609822011,
+        "recall_attack": 0.9995954283402447,
+        "f1_attack": 0.9586768842758755,
+        "pr_auc": 0.9295840798190214
+      },
+      {
+        "fold": 4,
+        "precision_attack": 0.47576068376068376,
+        "recall_attack": 0.908236522647174,
+        "f1_attack": 0.6244278919501032,
+        "pr_auc": 0.7234957373314423
+      },
+      {
+        "fold": 5,
+        "precision_attack": 0.6564964895553437,
+        "recall_attack": 0.9664412402705117,
+        "f1_attack": 0.7818726127800144,
+        "pr_auc": 0.5396434753988687
+      }
+    ],
+    "Random Forest": [
+      {
+        "fold": 1,
+        "precision_attack": 0.9997288732991035,
+        "recall_attack": 0.9751086722972414,
+        "f1_attack": 0.987265303390341,
+        "pr_auc": 0.9999362695203747
+      },
+      {
+        "fold": 2,
+        "precision_attack": 0.9813725171483372,
+        "recall_attack": 0.9980823910599749,
+        "f1_attack": 0.989656924615208,
+        "pr_auc": 0.9998058338652998
+      },
+      {
+        "fold": 3,
+        "precision_attack": 0.9958686013704151,
+        "recall_attack": 0.9995954283402447,
+        "f1_attack": 0.9977285346524658,
+        "pr_auc": 0.9999721497475957
+      },
+      {
+        "fold": 4,
+        "precision_attack": 0.41367392126154345,
+        "recall_attack": 0.9998694687377627,
+        "f1_attack": 0.5852242340896936,
+        "pr_auc": 0.9953942604913076
+      },
+      {
+        "fold": 5,
+        "precision_attack": 0.7013733058073781,
+        "recall_attack": 0.9970652035217558,
+        "f1_attack": 0.8234798187374855,
+        "pr_auc": 0.9953963733207319
+      }
+    ],
+    "Signature rules": [
+      {
+        "fold": 1,
+        "precision_attack": 0.11894510226049515,
+        "recall_attack": 0.007305422871593144,
+        "f1_attack": 0.013765396533736122,
+        "pr_auc": 0.9162376155906629
+      },
+      {
+        "fold": 2,
+        "precision_attack": 0.0,
+        "recall_attack": 0.0,
+        "f1_attack": 0.0,
+        "pr_auc": 0.8593346023808848
+      },
+      {
+        "fold": 3,
+        "precision_attack": 0.0,
+        "recall_attack": 0.0,
+        "f1_attack": 0.0,
+        "pr_auc": 0.7956703685820055
+      },
+      {
+        "fold": 4,
+        "precision_attack": 0.22317188983855651,
+        "recall_attack": 0.06134969325153374,
+        "f1_attack": 0.0962424490631719,
+        "pr_auc": 0.32951567385031394
+      },
+      {
+        "fold": 5,
+        "precision_attack": 1.0,
+        "recall_attack": 0.0017863978563225724,
+        "f1_attack": 0.0035664246592790726,
+        "pr_auc": 0.6086438953351838
+      }
+    ]
+  },
+  "model_comparison": [
+    {
+      "model": "Signature rules",
+      "accuracy": 0.17481390003773456,
+      "precision_attack": 0.001215066828675577,
+      "recall_attack": 8.923392673894615e-05,
+      "f1_attack": 0.0001662579492081965,
+      "false_positive_rate": 0.2439893143365984,
+      "false_negative_rate": 0.999910766073261,
+      "pr_auc": 0.7687902013894051,
+      "roc_auc": 0.3780499597950703,
+      "cv_f1_mean": 0.02271485405123742,
+      "cv_f1_sd": 0.04148792461492097,
+      "fit_seconds": 0.0,
+      "prediction_latency_ms": 0.0,
+      "prediction_latency_p95_ms": 0.0,
+      "artifact_bytes": 0
+    },
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.8648759905320572,
+      "precision_attack": 0.8964377682403434,
+      "recall_attack": 0.9319145138981841,
+      "f1_attack": 0.9138319515236366,
+      "false_positive_rate": 0.3581181359453844,
+      "false_negative_rate": 0.0680854861018159,
+      "pr_auc": 0.7803197192840448,
+      "roc_auc": 0.6752832763318187,
+      "cv_f1_mean": 0.8477501658775536,
+      "cv_f1_sd": 0.1435342545059317,
+      "fit_seconds": 4.151983271993231,
+      "prediction_latency_ms": 1.7695933759999998,
+      "prediction_latency_p95_ms": 3.385545949999999,
+      "artifact_bytes": 1721
+    },
+    {
+      "model": "Random Forest",
+      "accuracy": 0.942231827381565,
+      "precision_attack": 0.9304730655812601,
+      "recall_attack": 0.9995538303663053,
+      "f1_attack": 0.9637771563777157,
+      "false_positive_rate": 0.24844167408726625,
+      "false_negative_rate": 0.00044616963369473075,
+      "pr_auc": 0.9973728594448124,
+      "roc_auc": 0.9913047213183281,
+      "cv_f1_mean": 0.8766709630970387,
+      "cv_f1_sd": 0.1784813470109363,
+      "fit_seconds": 2.2979396079899743,
+      "prediction_latency_ms": 22.269584906,
+      "prediction_latency_p95_ms": 34.390051799999995,
+      "artifact_bytes": 952581
+    }
+  ],
+  "model_hashes": {
+    "Logistic Regression": "0x31dcb1b2e73ccbe0cf4b004dec379f2e61d4d7613f56112d7abe284c6dc8060a",
+    "Random Forest": "0x8b0ec800315916d906c61ffbd6d3143909f39beb38f2d27627ddedd7f12b3cf3"
+  },
+  "model_sizes_bytes": {
+    "Logistic Regression": 1721,
+    "Random Forest": 952581
+  },
+  "prediction_latency": {
+    "Logistic Regression": {
+      "mean_ms": 1.7695933759999998,
+      "p95_ms": 3.385545949999999
+    },
+    "Random Forest": {
+      "mean_ms": 22.269584906,
+      "p95_ms": 34.390051799999995
+    }
+  },
+  "model_fit_seconds": {
+    "Logistic Regression": 4.151983271993231,
+    "Random Forest": 2.2979396079899743
+  },
+  "shap_status": "TreeExplainer calculated on held-out samples",
+  "learning_curve": [
+    {
+      "training_rows": 27295,
+      "training_fraction": 0.2,
+      "train_f1": 0.9994585559923727,
+      "validation_f1": 0.9974772956609486,
+      "fit_seconds": 0.7401811169984285
+    },
+    {
+      "training_rows": 54589,
+      "training_fraction": 0.4,
+      "train_f1": 0.9995763310266912,
+      "validation_f1": 0.9974771683737828,
+      "fit_seconds": 1.0773221490089782
+    },
+    {
+      "training_rows": 95530,
+      "training_fraction": 0.7,
+      "train_f1": 0.9996638384273017,
+      "validation_f1": 0.9976526414094248,
+      "fit_seconds": 1.9467966929951217
+    },
+    {
+      "training_rows": 136471,
+      "training_fraction": 1.0,
+      "train_f1": 0.9997552595660564,
+      "validation_f1": 0.9977285346524658,
+      "fit_seconds": 2.078006744006416
+    }
+  ],
+  "plots": {
+    "learning_curve.png": "learning_curve.png",
+    "confusion_matrix.png": "confusion_matrix.png",
+    "roc_curve.png": "roc_curve.png",
+    "precision_recall.png": "precision_recall.png",
+    "feature_importance.png": "feature_importance.png",
+    "shap_summary.png": "shap_summary.png",
+    "model_comparison.png": "model_comparison.png",
+    "hyperparameter_impact.png": "hyperparameter_impact.png",
+    "errors_by_source.png": "errors_by_source.png",
+    "errors_by_confidence.png": "errors_by_confidence.png",
+    "errors_by_feature.png": "errors_by_feature.png"
+  }
+}

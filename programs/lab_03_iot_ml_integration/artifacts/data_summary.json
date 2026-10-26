@@ -1,0 +1,63 @@
+{
+  "source_file": "ton_iot_network.csv",
+  "rows_loaded": 211043,
+  "columns_loaded": 44,
+  "duplicates_removed": 20569,
+  "rows_after_deduplication": 190474,
+  "missing_values_before_imputation": 0,
+  "nonfinite_or_nonnumeric_values_converted_to_missing": 0,
+  "missing_feature_cells_to_impute": 0,
+  "class_counts": {
+    "0": 42040,
+    "1": 148434
+  },
+  "source_groups": 51,
+  "feature_names": [
+    "src_port",
+    "dst_port",
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "missed_bytes",
+    "src_pkts",
+    "src_ip_bytes",
+    "dst_pkts",
+    "dst_ip_bytes",
+    "dns_qclass",
+    "dns_qtype",
+    "dns_rcode",
+    "http_request_body_len",
+    "http_response_body_len",
+    "http_status_code"
+  ],
+  "excluded_fields": [
+    "dst_ip",
+    "label",
+    "src_ip",
+    "type"
+  ],
+  "random_seed": 42,
+  "train_rows": 136471,
+  "validation_rows": 24852,
+  "test_rows": 29151,
+  "train_groups": 36,
+  "validation_groups": 6,
+  "test_groups": 9,
+  "group_overlap_counts": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "train_class_counts": {
+    "0": 30224,
+    "1": 106247
+  },
+  "validation_class_counts": {
+    "0": 5078,
+    "1": 19774
+  },
+  "test_class_counts": {
+    "0": 6738,
+    "1": 22413
+  }
+}

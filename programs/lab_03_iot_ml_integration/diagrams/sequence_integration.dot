@@ -1,0 +1,63 @@
+digraph SequenceIntegration {
+  graph [layout=neato, bgcolor="white", pad=0.2, overlap=false, splines=polyline,
+         fontname="DejaVu Sans", label="Послідовність фактичної інтеграції: браузер, ML-oracle, EVM та аудит",
+         labelloc=t, fontsize=21];
+  node [fontname="DejaVu Sans", fontsize=14, pin=true];
+  edge [fontname="DejaVu Sans", fontsize=11, color="#52606d", arrowsize=0.7];
+
+  browser [pos="80,760!", shape=box, style="rounded,filled", fillcolor="#edf3ff", color="#4774bf", label="Owner / Browser\nEIP-1193 wallet"];
+  api [pos="240,760!", shape=box, style="rounded,filled", fillcolor="#eaf4ff", color="#4774bf", label="FastAPI +\nFeaturePipeline"];
+  model [pos="400,760!", shape=box, style="rounded,filled", fillcolor="#fff7e5", color="#d2a144", label="Random Forest\n+ SHAP"];
+  oracle [pos="560,760!", shape=box, style="rounded,filled", fillcolor="#e8f5e9", color="#5aa469", label="OracleService\nWeb3 signer"];
+  evm [pos="720,760!", shape=box, style="rounded,filled", fillcolor="#f3ecfb", color="#9061a9", label="EVM contracts\nDeviceQuarantine"];
+  audit [pos="880,760!", shape=box, style="rounded,filled", fillcolor="#eff4f7", color="#7793a4", label="EventIndexer\n+ SQLite"];
+
+  browser_1 [pos="80,650!", shape=point, style=invis]; browser_2 [pos="80,580!", shape=point, style=invis];
+  browser_3 [pos="80,510!", shape=point, style=invis]; browser_4 [pos="80,440!", shape=point, style=invis];
+  browser_5 [pos="80,370!", shape=point, style=invis]; browser_6 [pos="80,300!", shape=point, style=invis];
+  browser_7 [pos="80,230!", shape=point, style=invis]; browser_8 [pos="80,160!", shape=point, style=invis];
+  browser_9 [pos="80,90!", shape=point, style=invis]; browser_10 [pos="80,20!", shape=point, style=invis];
+  api_1 [pos="240,650!", shape=point, style=invis]; api_2 [pos="240,580!", shape=point, style=invis];
+  api_3 [pos="240,510!", shape=point, style=invis]; api_4 [pos="240,440!", shape=point, style=invis];
+  api_5 [pos="240,370!", shape=point, style=invis]; api_6 [pos="240,300!", shape=point, style=invis];
+  api_7 [pos="240,230!", shape=point, style=invis]; api_8 [pos="240,160!", shape=point, style=invis];
+  api_9 [pos="240,90!", shape=point, style=invis]; api_10 [pos="240,20!", shape=point, style=invis];
+  model_1 [pos="400,650!", shape=point, style=invis]; model_2 [pos="400,580!", shape=point, style=invis];
+  model_3 [pos="400,510!", shape=point, style=invis]; model_4 [pos="400,440!", shape=point, style=invis];
+  model_5 [pos="400,370!", shape=point, style=invis]; model_6 [pos="400,300!", shape=point, style=invis];
+  model_7 [pos="400,230!", shape=point, style=invis]; model_8 [pos="400,160!", shape=point, style=invis];
+  model_9 [pos="400,90!", shape=point, style=invis]; model_10 [pos="400,20!", shape=point, style=invis];
+  oracle_1 [pos="560,650!", shape=point, style=invis]; oracle_2 [pos="560,580!", shape=point, style=invis];
+  oracle_3 [pos="560,510!", shape=point, style=invis]; oracle_4 [pos="560,440!", shape=point, style=invis];
+  oracle_5 [pos="560,370!", shape=point, style=invis]; oracle_6 [pos="560,300!", shape=point, style=invis];
+  oracle_7 [pos="560,230!", shape=point, style=invis]; oracle_8 [pos="560,160!", shape=point, style=invis];
+  oracle_9 [pos="560,90!", shape=point, style=invis]; oracle_10 [pos="560,20!", shape=point, style=invis];
+  evm_1 [pos="720,650!", shape=point, style=invis]; evm_2 [pos="720,580!", shape=point, style=invis];
+  evm_3 [pos="720,510!", shape=point, style=invis]; evm_4 [pos="720,440!", shape=point, style=invis];
+  evm_5 [pos="720,370!", shape=point, style=invis]; evm_6 [pos="720,300!", shape=point, style=invis];
+  evm_7 [pos="720,230!", shape=point, style=invis]; evm_8 [pos="720,160!", shape=point, style=invis];
+  evm_9 [pos="720,90!", shape=point, style=invis]; evm_10 [pos="720,20!", shape=point, style=invis];
+  audit_1 [pos="880,650!", shape=point, style=invis]; audit_2 [pos="880,580!", shape=point, style=invis];
+  audit_3 [pos="880,510!", shape=point, style=invis]; audit_4 [pos="880,440!", shape=point, style=invis];
+  audit_5 [pos="880,370!", shape=point, style=invis]; audit_6 [pos="880,300!", shape=point, style=invis];
+  audit_7 [pos="880,230!", shape=point, style=invis]; audit_8 [pos="880,160!", shape=point, style=invis];
+  audit_9 [pos="880,90!", shape=point, style=invis]; audit_10 [pos="880,20!", shape=point, style=invis];
+
+  browser -> browser_1 -> browser_2 -> browser_3 -> browser_4 -> browser_5 -> browser_6 -> browser_7 -> browser_8 -> browser_9 -> browser_10 [style=dashed, arrowhead=none, color="#a8b4c2"];
+  api -> api_1 -> api_2 -> api_3 -> api_4 -> api_5 -> api_6 -> api_7 -> api_8 -> api_9 -> api_10 [style=dashed, arrowhead=none, color="#a8b4c2"];
+  model -> model_1 -> model_2 -> model_3 -> model_4 -> model_5 -> model_6 -> model_7 -> model_8 -> model_9 -> model_10 [style=dashed, arrowhead=none, color="#a8b4c2"];
+  oracle -> oracle_1 -> oracle_2 -> oracle_3 -> oracle_4 -> oracle_5 -> oracle_6 -> oracle_7 -> oracle_8 -> oracle_9 -> oracle_10 [style=dashed, arrowhead=none, color="#a8b4c2"];
+  evm -> evm_1 -> evm_2 -> evm_3 -> evm_4 -> evm_5 -> evm_6 -> evm_7 -> evm_8 -> evm_9 -> evm_10 [style=dashed, arrowhead=none, color="#a8b4c2"];
+  audit -> audit_1 -> audit_2 -> audit_3 -> audit_4 -> audit_5 -> audit_6 -> audit_7 -> audit_8 -> audit_9 -> audit_10 [style=dashed, arrowhead=none, color="#a8b4c2"];
+
+  browser_1 -> evm_1 [label="1. register device / grant access\nwallet-signed transaction"];
+  browser_2 -> api_2 [label="2. submit device ID + flow"];
+  api_3 -> model_3 [label="3. validated feature vector"];
+  model_4 -> api_4 [label="4. class + probability + SHAP factors"];
+  api_5 -> oracle_5 [label="5. canonical JSON + SHA-256 + model v2"];
+  oracle_6 -> evm_6 [label="6. recordDecision(result, bps, v2, inputHash)"];
+  evm_7 -> audit_7 [label="7. DecisionRecorded / DeviceQuarantined"];
+  audit_8 -> api_8 [label="8. event mirror + receipt"];
+  api_9 -> browser_9 [label="9. result + explanation + tx hash"];
+  browser_10 -> evm_10 [label="10. read audit history from contract"];
+}

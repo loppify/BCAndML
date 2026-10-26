@@ -1,0 +1,25 @@
+{
+  "name": "nure-lab-03-iot-ml-integration",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy:local": "hardhat run scripts/deploy-local.js --network localhost",
+    "test:api": "python -m pytest -q",
+    "train": "python -m app.train --data data/raw/ton_iot_network.csv",
+    "demo": "python scripts/run_demo.py",
+    "test:e2e": "python scripts/e2e_smoke.py",
+    "capture:ui": "node scripts/capture-ui.cjs"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "5.2.0",
+    "@openzeppelin/contracts-upgradeable": "5.2.0",
+    "@openzeppelin/hardhat-upgrades": "^3.9.1",
+    "dotenv": "^16.4.7",
+    "hardhat": "2.29.1",
+    "hardhat-gas-reporter": "^1.0.10",
+    "playwright": "^1.64.1",
+    "solidity-coverage": "^0.8.16"
+  }
+}

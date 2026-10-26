@@ -1,0 +1,338 @@
+[
+  {
+    "sample_id": "holdout-001",
+    "display_name": "Потік відкладеної вибірки 001",
+    "ground_truth": 0,
+    "features": {
+      "src_port": 5353.0,
+      "dst_port": 5353.0,
+      "duration": 3.994841,
+      "src_bytes": 336.0,
+      "dst_bytes": 0.0,
+      "missed_bytes": 0.0,
+      "src_pkts": 3.0,
+      "src_ip_bytes": 420.0,
+      "dst_pkts": 0.0,
+      "dst_ip_bytes": 0.0,
+      "dns_qclass": 32769.0,
+      "dns_qtype": 12.0,
+      "dns_rcode": 0.0,
+      "http_request_body_len": 0.0,
+      "http_response_body_len": 0.0,
+      "http_status_code": 0.0
+    },
+    "signature_context": {
+      "dst_port": 5353,
+      "src_pkts": 3.0,
+      "conn_state": "S0"
+    }
+  },
+  {
+    "sample_id": "holdout-002",
+    "display_name": "Потік відкладеної вибірки 002",
+    "ground_truth": 0,
+    "features": {
+      "src_port": 43930.0,
+      "dst_port": 53.0,
+      "duration": 0.000389,
+      "src_bytes": 68.0,
+      "dst_bytes": 0.0,
+      "missed_bytes": 0.0,
+      "src_pkts": 2.0,
+      "src_ip_bytes": 124.0,
+      "dst_pkts": 0.0,
+      "dst_ip_bytes": 0.0,
+      "dns_qclass": 1.0,
+      "dns_qtype": 28.0,
+      "dns_rcode": 0.0,
+      "http_request_body_len": 0.0,
+      "http_response_body_len": 0.0,
+      "http_status_code": 0.0
+    },
+    "signature_context": {
+      "dst_port": 53,
+      "src_pkts": 2.0,
+      "conn_state": "S0"
+    }
+  },
+  {
+    "sample_id": "holdout-003",
+    "display_name": "Потік відкладеної вибірки 003",
+    "ground_truth": 0,
+    "features": {
+      "src_port": 63748.0,
+      "dst_port": 53.0,
+      "duration": 0.0,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "missed_bytes": 0.0,
+      "src_pkts": 1.0,
+      "src_ip_bytes": 54.0,
+      "dst_pkts": 0.0,
+      "dst_ip_bytes": 0.0,
+      "dns_qclass": 1.0,
+      "dns_qtype": 1.0,
+      "dns_rcode": 0.0,
+      "http_request_body_len": 0.0,
+      "http_response_body_len": 0.0,
+      "http_status_code": 0.0
+    },
+    "signature_context": {
+      "dst_port": 53,
+      "src_pkts": 1.0,
+      "conn_state": "S0"
+    }
+  },
+  {
+    "sample_id": "holdout-004",
+    "display_name": "Потік відкладеної вибірки 004",
+    "ground_truth": 0,
+    "features": {
+      "src_port": 51620.0,
+      "dst_port": 41952.0,
+      "duration": 0.521331,
+      "src_bytes": 383.0,
+      "dst_bytes": 3882.0,
+      "missed_bytes": 0.0,
+      "src_pkts": 10.0,
+      "src_ip_bytes": 795.0,
+      "dst_pkts": 12.0,
+      "dst_ip_bytes": 4374.0,
+      "dns_qclass": 0.0,
+      "dns_qtype": 0.0,
+      "dns_rcode": 0.0,
+      "http_request_body_len": 0.0,
+      "http_response_body_len": 0.0,
+      "http_status_code": 0.0
+    },
+    "signature_context": {
+      "dst_port": 41952,
+      "src_pkts": 10.0,
+      "conn_state": "SF"
+    }
+  },
+  {
+    "sample_id": "holdout-005",
+    "display_name": "Потік відкладеної вибірки 005",
+    "ground_truth": 0,
+    "features": {
+      "src_port": 1663.0,
+      "dst_port": 1663.0,
+      "duration": 0.234826,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "missed_bytes": 0.0,
+      "src_pkts": 120.0,
+      "src_ip_bytes": 4800.0,
+      "dst_pkts": 0.0,
+      "dst_ip_bytes": 0.0,
+      "dns_qclass": 0.0,
+      "dns_qtype": 0.0,
+      "dns_rcode": 0.0,
+      "http_request_body_len": 0.0,
+      "http_response_body_len": 0.0,
+      "http_status_code": 0.0
+    },
+    "signature_context": {
+      "dst_port": 1663,
+      "src_pkts": 120.0,
+      "conn_state": "S0"
+    }
+  },
+  {
+    "sample_id": "holdout-006",
+    "display_name": "Потік відкладеної вибірки 006",
+    "ground_truth": 0,
+    "features": {
+      "src_port": 2014.0,
+      "dst_port": 2014.0,
+      "duration": 0.188884,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "missed_bytes": 0.0,
+      "src_pkts": 120.0,
+      "src_ip_bytes": 4800.0,
+      "dst_pkts": 0.0,
+      "dst_ip_bytes": 0.0,
+      "dns_qclass": 0.0,
+      "dns_qtype": 0.0,
+      "dns_rcode": 0.0,
+      "http_request_body_len": 0.0,
+      "http_response_body_len": 0.0,
+      "http_status_code": 0.0
+    },
+    "signature_context": {
+      "dst_port": 2014,
+      "src_pkts": 120.0,
+      "conn_state": "S0"
+    }
+  },
+  {
+    "sample_id": "holdout-007",
+    "display_name": "Потік відкладеної вибірки 007",
+    "ground_truth": 1,
+    "features": {
+      "src_port": 8.0,
+      "dst_port": 0.0,
+      "duration": 7.909107,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "missed_bytes": 0.0,
+      "src_pkts": 1.0,
+      "src_ip_bytes": 28.0,
+      "dst_pkts": 834.0,
+      "dst_ip_bytes": 23352.0,
+      "dns_qclass": 0.0,
+      "dns_qtype": 0.0,
+      "dns_rcode": 0.0,
+      "http_request_body_len": 0.0,
+      "http_response_body_len": 0.0,
+      "http_status_code": 0.0
+    },
+    "signature_context": {
+      "dst_port": 0,
+      "src_pkts": 1.0,
+      "conn_state": "OTH"
+    }
+  },
+  {
+    "sample_id": "holdout-008",
+    "display_name": "Потік відкладеної вибірки 008",
+    "ground_truth": 1,
+    "features": {
+      "src_port": 61171.0,
+      "dst_port": 2809.0,
+      "duration": 0.0,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "missed_bytes": 0.0,
+      "src_pkts": 1.0,
+      "src_ip_bytes": 44.0,
+      "dst_pkts": 0.0,
+      "dst_ip_bytes": 0.0,
+      "dns_qclass": 0.0,
+      "dns_qtype": 0.0,
+      "dns_rcode": 0.0,
+      "http_request_body_len": 0.0,
+      "http_response_body_len": 0.0,
+      "http_status_code": 0.0
+    },
+    "signature_context": {
+      "dst_port": 2809,
+      "src_pkts": 1.0,
+      "conn_state": "S0"
+    }
+  },
+  {
+    "sample_id": "holdout-009",
+    "display_name": "Потік відкладеної вибірки 009",
+    "ground_truth": 1,
+    "features": {
+      "src_port": 56888.0,
+      "dst_port": 80.0,
+      "duration": 0.0,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "missed_bytes": 0.0,
+      "src_pkts": 1.0,
+      "src_ip_bytes": 52.0,
+      "dst_pkts": 0.0,
+      "dst_ip_bytes": 0.0,
+      "dns_qclass": 0.0,
+      "dns_qtype": 0.0,
+      "dns_rcode": 0.0,
+      "http_request_body_len": 0.0,
+      "http_response_body_len": 0.0,
+      "http_status_code": 0.0
+    },
+    "signature_context": {
+      "dst_port": 80,
+      "src_pkts": 1.0,
+      "conn_state": "SH"
+    }
+  },
+  {
+    "sample_id": "holdout-010",
+    "display_name": "Потік відкладеної вибірки 010",
+    "ground_truth": 1,
+    "features": {
+      "src_port": 47760.0,
+      "dst_port": 80.0,
+      "duration": 10.398125,
+      "src_bytes": 2407.0,
+      "dst_bytes": 1253.0,
+      "missed_bytes": 0.0,
+      "src_pkts": 6.0,
+      "src_ip_bytes": 2727.0,
+      "dst_pkts": 4.0,
+      "dst_ip_bytes": 1469.0,
+      "dns_qclass": 0.0,
+      "dns_qtype": 0.0,
+      "dns_rcode": 0.0,
+      "http_request_body_len": 0.0,
+      "http_response_body_len": 0.0,
+      "http_status_code": 0.0
+    },
+    "signature_context": {
+      "dst_port": 80,
+      "src_pkts": 6.0,
+      "conn_state": "S3"
+    }
+  },
+  {
+    "sample_id": "holdout-011",
+    "display_name": "Потік відкладеної вибірки 011",
+    "ground_truth": 1,
+    "features": {
+      "src_port": 40820.0,
+      "dst_port": 80.0,
+      "duration": 0.0,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "missed_bytes": 0.0,
+      "src_pkts": 1.0,
+      "src_ip_bytes": 52.0,
+      "dst_pkts": 0.0,
+      "dst_ip_bytes": 0.0,
+      "dns_qclass": 0.0,
+      "dns_qtype": 0.0,
+      "dns_rcode": 0.0,
+      "http_request_body_len": 0.0,
+      "http_response_body_len": 0.0,
+      "http_status_code": 0.0
+    },
+    "signature_context": {
+      "dst_port": 80,
+      "src_pkts": 1.0,
+      "conn_state": "SH"
+    }
+  },
+  {
+    "sample_id": "holdout-012",
+    "display_name": "Потік відкладеної вибірки 012",
+    "ground_truth": 1,
+    "features": {
+      "src_port": 48304.0,
+      "dst_port": 80.0,
+      "duration": 65.771855,
+      "src_bytes": 3181.0,
+      "dst_bytes": 322.0,
+      "missed_bytes": 0.0,
+      "src_pkts": 7.0,
+      "src_ip_bytes": 3553.0,
+      "dst_pkts": 6.0,
+      "dst_ip_bytes": 642.0,
+      "dns_qclass": 0.0,
+      "dns_qtype": 0.0,
+      "dns_rcode": 0.0,
+      "http_request_body_len": 0.0,
+      "http_response_body_len": 0.0,
+      "http_status_code": 0.0
+    },
+    "signature_context": {
+      "dst_port": 80,
+      "src_pkts": 7.0,
+      "conn_state": "S3"
+    }
+  }
+]

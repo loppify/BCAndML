@@ -1,0 +1,76 @@
+{
+  "model_name": "Random Forest IoT IDS",
+  "model_version": 2,
+  "task": "binary network-flow classification; 1=attack, 0=normal",
+  "dataset": {
+    "name": "ToN_IoT Network processed train/test CSV mirror",
+    "source": "UNSW Canberra ToN_IoT project, academic-use mirror used in Lab 1",
+    "input_rows": 211043,
+    "rows_after_deduplication": 190474,
+    "features": [
+      "src_port",
+      "dst_port",
+      "duration",
+      "src_bytes",
+      "dst_bytes",
+      "missed_bytes",
+      "src_pkts",
+      "src_ip_bytes",
+      "dst_pkts",
+      "dst_ip_bytes",
+      "dns_qclass",
+      "dns_qtype",
+      "dns_rcode",
+      "http_request_body_len",
+      "http_response_body_len",
+      "http_status_code"
+    ],
+    "split": "StratifiedGroupKFold by src_ip: disjoint train, validation and held-out test groups",
+    "seed": 42
+  },
+  "preprocessing": [
+    "Remove exact duplicate rows",
+    "Convert selected numeric features to numbers and represent invalid/nonfinite values as missing",
+    "Median imputation fitted within each model training partition",
+    "Do not use src_ip, dst_ip, label or type as model features",
+    "Preserve extreme values; no clipping or scaling is used by Random Forest"
+  ],
+  "hyperparameters": {
+    "n_estimators": 50,
+    "max_depth": 18,
+    "min_samples_leaf": 2
+  },
+  "decision_threshold": 0.5,
+  "confidence_scale_bps": "probability(attack) multiplied by 10000; 5000 bps is contract threshold",
+  "held_out_test_metrics": {
+    "accuracy": 0.942231827381565,
+    "precision_attack": 0.9304730655812601,
+    "recall_attack": 0.9995538303663053,
+    "f1_attack": 0.9637771563777157,
+    "false_positive_rate": 0.24844167408726625,
+    "false_negative_rate": 0.00044616963369473075,
+    "pr_auc": 0.9973728594448124,
+    "roc_auc": 0.9913047213183281,
+    "confusion_matrix": [
+      [
+        5064,
+        1674
+      ],
+      [
+        10,
+        22403
+      ]
+    ]
+  },
+  "group_cv_f1_mean": 0.8766709630970387,
+  "group_cv_f1_sd": 0.1784813470109363,
+  "artifact_file": "random_forest_v2.joblib",
+  "artifact_sha256": "0x8b0ec800315916d906c61ffbd6d3143909f39beb38f2d27627ddedd7f12b3cf3",
+  "limitations": [
+    "The data is a processed academic benchmark and does not represent all live IoT deployments.",
+    "Group separation is by source IP because the CSV has no timestamp field.",
+    "The model output is a statistical score, not proof that a physical device is compromised.",
+    "Model threshold and performance require revalidation when the data source or feature schema changes."
+  ],
+  "intended_use": "Educational analysis of simulated IoT network flows; the gateway policy and owner review remain responsible for enforcement."
+}

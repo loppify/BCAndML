@@ -1,0 +1,28 @@
+digraph DatabaseSchema {
+  graph [rankdir=TB, bgcolor="white", pad=0.25, nodesep=0.5, ranksep=0.62, fontname="DejaVu Sans", label="Схема позаланцюгової бази даних SQLite", labelloc=t, fontsize=20, splines=polyline];
+  node [shape=plain, fontname="DejaVu Sans", fontsize=11];
+  edge [fontname="DejaVu Sans", fontsize=9, color="#52606d", arrowsize=0.7];
+
+  devices [label=<<table BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#5b8c6f"><tr><td BGCOLOR="#e2f1e6" COLSPAN="2"><b>device_metadata</b></td></tr><tr><td PORT="pk" ALIGN="LEFT"><b>PK</b> device_id</td><td ALIGN="LEFT">TEXT, EVM pseudonymous ID</td></tr><tr><td ALIGN="LEFT">local_name</td><td ALIGN="LEFT">TEXT, optional</td></tr><tr><td ALIGN="LEFT">metadata_hash</td><td ALIGN="LEFT">TEXT, SHA-256</td></tr><tr><td ALIGN="LEFT">created_at</td><td ALIGN="LEFT">UTC timestamp</td></tr></table>>];
+
+  flows [label=<<table BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#386cb0"><tr><td BGCOLOR="#e3effb" COLSPAN="2"><b>flow_records</b></td></tr><tr><td PORT="pk" ALIGN="LEFT"><b>PK</b> flow_id</td><td ALIGN="LEFT">TEXT / UUID, observation identity</td></tr><tr><td PORT="device" ALIGN="LEFT"><b>FK</b> device_id</td><td ALIGN="LEFT">TEXT → device_metadata</td></tr><tr><td ALIGN="LEFT">input_hash</td><td ALIGN="LEFT">TEXT, SHA-256 digest index</td></tr><tr><td ALIGN="LEFT">observed_at</td><td ALIGN="LEFT">UTC timestamp</td></tr><tr><td ALIGN="LEFT">feature_schema</td><td ALIGN="LEFT">TEXT version</td></tr><tr><td ALIGN="LEFT">features_json</td><td ALIGN="LEFT">JSON, selected numeric features</td></tr><tr><td ALIGN="LEFT">raw_data_ref</td><td ALIGN="LEFT">TEXT, optional file reference</td></tr><tr><td ALIGN="LEFT">label</td><td ALIGN="LEFT">INTEGER 0/1, optional</td></tr></table>>];
+
+  models [label=<<table BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#d9a441"><tr><td BGCOLOR="#fff0cc" COLSPAN="2"><b>model_artifacts</b></td></tr><tr><td PORT="pk" ALIGN="LEFT"><b>PK</b> version</td><td ALIGN="LEFT">INTEGER, matches EVM model version</td></tr><tr><td ALIGN="LEFT">artifact_path</td><td ALIGN="LEFT">TEXT, local file</td></tr><tr><td ALIGN="LEFT">artifact_hash</td><td ALIGN="LEFT">TEXT, unique SHA-256</td></tr><tr><td ALIGN="LEFT">feature_schema</td><td ALIGN="LEFT">TEXT version</td></tr><tr><td ALIGN="LEFT">threshold_bps</td><td ALIGN="LEFT">INTEGER 0..10000</td></tr><tr><td ALIGN="LEFT">trained_at</td><td ALIGN="LEFT">UTC timestamp</td></tr><tr><td ALIGN="LEFT">metrics_json</td><td ALIGN="LEFT">JSON summary</td></tr></table>>];
+
+  predictions [label=<<table BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#9061a9"><tr><td BGCOLOR="#f0e7fa" COLSPAN="2"><b>predictions</b></td></tr><tr><td PORT="pk" ALIGN="LEFT"><b>PK</b> prediction_id</td><td ALIGN="LEFT">TEXT / UUID</td></tr><tr><td PORT="flow" ALIGN="LEFT"><b>FK</b> flow_id</td><td ALIGN="LEFT">TEXT → flow_records</td></tr><tr><td PORT="device" ALIGN="LEFT"><b>FK</b> device_id</td><td ALIGN="LEFT">TEXT → device_metadata</td></tr><tr><td PORT="model" ALIGN="LEFT"><b>FK</b> model_version</td><td ALIGN="LEFT">INTEGER → model_artifacts</td></tr><tr><td ALIGN="LEFT">input_hash</td><td ALIGN="LEFT">TEXT, digest submitted on-chain</td></tr><tr><td ALIGN="LEFT">is_attack</td><td ALIGN="LEFT">INTEGER / BOOLEAN</td></tr><tr><td ALIGN="LEFT">confidence_bps</td><td ALIGN="LEFT">INTEGER 0..10000</td></tr><tr><td ALIGN="LEFT">tx_hash, block_number</td><td ALIGN="LEFT">TEXT / INTEGER, nullable until mined</td></tr><tr><td ALIGN="LEFT">created_at</td><td ALIGN="LEFT">UTC timestamp</td></tr></table>>];
+
+  events [label=<<table BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#b05a56"><tr><td BGCOLOR="#f9e7e5" COLSPAN="2"><b>chain_event_mirror</b></td></tr><tr><td PORT="pk" ALIGN="LEFT"><b>PK</b> tx_hash + log_index</td><td ALIGN="LEFT">composite event identity</td></tr><tr><td ALIGN="LEFT">event_name</td><td ALIGN="LEFT">TEXT</td></tr><tr><td PORT="device" ALIGN="LEFT"><b>FK</b> device_id</td><td ALIGN="LEFT">TEXT → device_metadata</td></tr><tr><td PORT="model" ALIGN="LEFT"><b>FK</b> model_version</td><td ALIGN="LEFT">INTEGER → model_artifacts, nullable</td></tr><tr><td ALIGN="LEFT">block_number</td><td ALIGN="LEFT">INTEGER</td></tr><tr><td ALIGN="LEFT">payload_json</td><td ALIGN="LEFT">JSON event arguments</td></tr><tr><td ALIGN="LEFT">indexed_at</td><td ALIGN="LEFT">UTC timestamp</td></tr></table>>];
+
+  { rank=same; devices; models; }
+  { rank=same; flows; predictions; }
+  { rank=same; events; }
+  devices -> models [style=invis, weight=20];
+  flows -> predictions [style=invis, weight=20];
+  devices:pk -> flows:device [label="1 : 0..N"];
+  devices:pk -> predictions:device [label="1 : 0..N"];
+  flows:pk -> predictions:flow [label="1 : 0..N"];
+  models:pk -> predictions:model [label="1 : 0..N"];
+  devices:pk -> events:device [label="1 : 0..N"];
+  models:pk -> events:model [label="1 : 0..N"];
+  predictions:pk -> events:pk [style=dashed, label="match by tx_hash"];
+}
