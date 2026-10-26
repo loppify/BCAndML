@@ -1,0 +1,115 @@
+{
+  "snapshot_utc": "2026-10-26T09:34:48.560232+00:00",
+  "fee_sources": {
+    "ethereum_mainnet": "public JSON-RPC eth_gasPrice and latest baseFeePerGas",
+    "arbitrum_one": "public JSON-RPC eth_gasPrice and latest baseFeePerGas",
+    "optimism_mainnet": "public JSON-RPC eth_gasPrice and latest baseFeePerGas"
+  },
+  "fx_source": "CoinGecko simple price API, ETH/EUR",
+  "eth_eur": 2077.26,
+  "market_fee_snapshot": {
+    "ethereum_mainnet": {
+      "chain_id": 1,
+      "gas_price_wei": 49589640,
+      "base_fee_per_gas_wei": 49586968,
+      "block_number": 26275995
+    },
+    "arbitrum_one": {
+      "chain_id": 42161,
+      "gas_price_wei": 20020000,
+      "base_fee_per_gas_wei": 20000000,
+      "block_number": 518402497
+    },
+    "optimism_mainnet": {
+      "chain_id": 10,
+      "gas_price_wei": 1000285,
+      "base_fee_per_gas_wei": 285,
+      "block_number": 158704255
+    }
+  },
+  "measured_contract_gas": {
+    "sepolia_uups_proxy_median": 384428,
+    "sepolia_samples": [
+      384428,
+      384416,
+      384428,
+      384428,
+      384416
+    ],
+    "hardhat_local_contract_median": 118468,
+    "hardhat_local_samples": [
+      135568,
+      118468,
+      118468,
+      118468,
+      118468,
+      118444,
+      118456,
+      118444,
+      118456,
+      118456,
+      118468,
+      118468,
+      118468,
+      118468,
+      118468,
+      118468,
+      118468,
+      118468,
+      118468,
+      118468
+    ],
+    "basis": "Use Sepolia proxy transaction gas as a closer analogue for deployed proxy operation; fee prices are a time-specific public snapshot."
+  },
+  "monthly_workload": {
+    "operations_per_day": 1000,
+    "days": 30,
+    "operations": 30000
+  },
+  "l2_data_fee_method": {
+    "fixed_call_data_bytes": 164,
+    "raw_calldata_sensitivity_l1_gas": 2624,
+    "warning": "Illustrative raw-call-data sensitivity only. Arbitrum uses batch-compressed parent-chain data pricing; OP Stack fees include L1-data and operator components. Exact fees require a signed transaction and current chain-specific fee estimation."
+  },
+  "chain_cost_estimates": [
+    {
+      "network": "ethereum_mainnet",
+      "gas_units_proxy_measurement": 384428,
+      "execution_cost_eur_per_operation": 0.03960014955152858,
+      "estimated_monthly_execution_eur_30000_operations": 1188.0044865458574,
+      "raw_calldata_sensitivity_eur_per_operation": 0.0,
+      "monthly_execution_plus_raw_calldata_sensitivity_eur": 1188.0044865458574,
+      "note": "Execution-only quote plus a rough raw-calldata sensitivity for L2. This is not a total-fee quote or strict upper bound; rollup compression, transaction envelope, operator fees and batch state are not fully modeled."
+    },
+    {
+      "network": "arbitrum_one",
+      "gas_units_proxy_measurement": 384428,
+      "execution_cost_eur_per_operation": 0.015987109283745603,
+      "estimated_monthly_execution_eur_30000_operations": 479.6132785123681,
+      "raw_calldata_sensitivity_eur_per_operation": 0.00027029975033871363,
+      "monthly_execution_plus_raw_calldata_sensitivity_eur": 487.72227102252947,
+      "note": "Execution-only quote plus a rough raw-calldata sensitivity for L2. This is not a total-fee quote or strict upper bound; rollup compression, transaction envelope, operator fees and batch state are not fully modeled."
+    },
+    {
+      "network": "optimism_mainnet",
+      "gas_units_proxy_measurement": 384428,
+      "execution_cost_eur_per_operation": 0.0007987844959985749,
+      "estimated_monthly_execution_eur_30000_operations": 23.963534879957248,
+      "raw_calldata_sensitivity_eur_per_operation": 0.00027029975033871363,
+      "monthly_execution_plus_raw_calldata_sensitivity_eur": 32.07252739011866,
+      "note": "Execution-only quote plus a rough raw-calldata sensitivity for L2. This is not a total-fee quote or strict upper bound; rollup compression, transaction envelope, operator fees and batch state are not fully modeled."
+    }
+  ],
+  "centralized_hosting_scenario": {
+    "assumed_monthly_host_eur": 5.0,
+    "monthly_operations": 30000,
+    "cost_eur_per_operation": 0.00016666666666666666,
+    "note": "Illustrative low-cost single-server budget, not a measured quote; excludes backups, monitoring and engineering labor."
+  },
+  "exclusions": [
+    "deployment and model registration transactions",
+    "API hosting and storage for chain scenarios",
+    "operator labor",
+    "rollup L1 batch fee uncertainty"
+  ]
+}

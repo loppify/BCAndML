@@ -1,0 +1,73 @@
+{
+  "network": "Sepolia",
+  "chain_id": 11155111,
+  "measured_at_utc": "2026-10-26T09:08:50.189021+00:00",
+  "contract_proxy": "0xB77229F7fb1834Fbf0e13BC3Ac0aAa5e0098a088",
+  "operation": "DeviceQuarantine.recordDecision, normal decision, model version 2",
+  "device_id": "0x0725b30fc42c4b6aefee1fd24338f433a8c13277f2b2d80a68b571eb28454717",
+  "model_version": 2,
+  "model_hash": "0x8b0ec800315916d906c61ffbd6d3143909f39beb38f2d27627ddedd7f12b3cf3",
+  "model_registration": {
+    "tx_hash": "0xf8bd00f5072188f122dd4113e2fc7d8de887e48e9e943e807626f60b1871865e",
+    "block_number": 11996979,
+    "gas_used": 137755
+  },
+  "repetitions": 5,
+  "samples": [
+    {
+      "repeat": 1,
+      "tx_hash": "0x2d2c2cf02941f8b5f268967f64e0dea9283dc25489841196374e81b446c225d5",
+      "block_number": 11996980,
+      "status": 1,
+      "gas_used": 384428,
+      "effective_gas_price_wei": 68,
+      "submit_to_receipt_ms": 10361.825362982927
+    },
+    {
+      "repeat": 2,
+      "tx_hash": "0x0803774a9ac78e6cb30f697452be25a98170278fac4e36beb77b699c5bb270af",
+      "block_number": 11996981,
+      "status": 1,
+      "gas_used": 384416,
+      "effective_gas_price_wei": 68,
+      "submit_to_receipt_ms": 11258.721891004825
+    },
+    {
+      "repeat": 3,
+      "tx_hash": "0x76cdc0b52260a7d2437001fef8a2f89a4e6e73167a783eb93e7ff69065ea5c15",
+      "block_number": 11996982,
+      "status": 1,
+      "gas_used": 384428,
+      "effective_gas_price_wei": 68,
+      "submit_to_receipt_ms": 11009.995756001445
+    },
+    {
+      "repeat": 4,
+      "tx_hash": "0xf4d9dd7f082afaa5b7e30b1990db34c451df8e2ea907e40b84c2d015be7918a5",
+      "block_number": 11996986,
+      "status": 1,
+      "gas_used": 384428,
+      "effective_gas_price_wei": 68,
+      "submit_to_receipt_ms": 47508.80415801657
+    },
+    {
+      "repeat": 5,
+      "tx_hash": "0x2d82e12ec729751a14bd0df73700d283df297b3fb2abe619c6bd6570cebb33d4",
+      "block_number": 11996988,
+      "status": 1,
+      "gas_used": 384416,
+      "effective_gas_price_wei": 68,
+      "submit_to_receipt_ms": 23160.274394991575
+    }
+  ],
+  "summary_ms": {
+    "min": 10361.825362982927,
+    "median": 11258.721891004825,
+    "mean": 20659.92431259947,
+    "max": 47508.80415801657
+  },
+  "testnet_balance_before_wei": 44587357941125867,
+  "testnet_balance_after_wei": 44587357810421979,
+  "measured_operation_cost_wei": 130703888,
+  "note": "Testnet-only writes; elapsed time includes provider submission and receipt polling, not finality guarantees."
+}

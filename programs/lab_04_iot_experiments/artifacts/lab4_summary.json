@@ -1,0 +1,217 @@
+{
+  "local_confirmation_ms": {
+    "n": 100,
+    "mean": 3.8117286599999987,
+    "p95": 7.187272750000056,
+    "max": 8.13817199999994
+  },
+  "sepolia_confirmation_ms": {
+    "min": 10361.825362982927,
+    "median": 11258.721891004825,
+    "mean": 20659.92431259947,
+    "max": 47508.80415801657
+  },
+  "gas_by_prior_records": [
+    {
+      "prior_records": 0,
+      "n": 5,
+      "mean": 121888.0,
+      "sd": 7647.352483049281,
+      "min": 118468,
+      "max": 135568
+    },
+    {
+      "prior_records": 1,
+      "n": 5,
+      "mean": 118451.2,
+      "sd": 6.572670690061993,
+      "min": 118444,
+      "max": 118456
+    },
+    {
+      "prior_records": 10,
+      "n": 5,
+      "mean": 118468.0,
+      "sd": 0.0,
+      "min": 118468,
+      "max": 118468
+    },
+    {
+      "prior_records": 100,
+      "n": 5,
+      "mean": 118468.0,
+      "sd": 0.0,
+      "min": 118468,
+      "max": 118468
+    }
+  ],
+  "gateway_load": [
+    {
+      "simulated_concurrent_users": 10,
+      "requests_per_user": 10,
+      "requests_total": 100,
+      "successful_http_200": 100,
+      "failed_or_denied": 0,
+      "elapsed_seconds": 3.403561719984282,
+      "throughput_requests_per_second": 29.380986221828177,
+      "latency_ms": {
+        "p50": 324.9353449937189,
+        "p95": 472.71525303658564,
+        "p99": 519.0462827152808,
+        "max": 561.3830099755432
+      },
+      "error_examples": []
+    },
+    {
+      "simulated_concurrent_users": 50,
+      "requests_per_user": 10,
+      "requests_total": 500,
+      "successful_http_200": 500,
+      "failed_or_denied": 0,
+      "elapsed_seconds": 17.415988339984324,
+      "throughput_requests_per_second": 28.709252110147546,
+      "latency_ms": {
+        "p50": 1701.2080229906132,
+        "p95": 2263.2405435448163,
+        "p99": 2526.134835490375,
+        "max": 2723.8767500093672
+      },
+      "error_examples": []
+    },
+    {
+      "simulated_concurrent_users": 100,
+      "requests_per_user": 10,
+      "requests_total": 1000,
+      "successful_http_200": 1000,
+      "failed_or_denied": 0,
+      "elapsed_seconds": 37.79121528001269,
+      "throughput_requests_per_second": 26.461176032327483,
+      "latency_ms": {
+        "p50": 3812.6337319990853,
+        "p95": 4751.702710482641,
+        "p99": 4926.63230429258,
+        "max": 5074.934431002475
+      },
+      "error_examples": []
+    }
+  ],
+  "gateway_1000_sequential": {
+    "simulated_concurrent_users": 1,
+    "requests_per_user": 1000,
+    "requests_total": 1000,
+    "successful_http_200": 1000,
+    "failed_or_denied": 0,
+    "elapsed_seconds": 50.289851679990534,
+    "throughput_requests_per_second": 19.884727566175798,
+    "latency_ms": {
+      "p50": 46.245414996519685,
+      "p95": 82.95817677717423,
+      "p99": 100.14197909651556,
+      "max": 113.91726700821891
+    },
+    "error_examples": []
+  },
+  "component_mean_ms": {
+    "state_read": 17.2142339986749,
+    "canonicalization_and_hash": 0.23307960364036262,
+    "model_prediction": 35.317647602641955,
+    "shap_explanation": 15.78199359937571,
+    "sqlite_writes": 5.7483351964037865,
+    "oracle_transaction_and_receipt": 95.34586659865454,
+    "sqlite_event_mirror": 89.4439282012172,
+    "sum_instrumented_stages": 259.08508480060846,
+    "total": 259.1836239967961
+  },
+  "centralized_mean_ms": 52.05638920306228,
+  "api_full_path_mean_ms": 207.33447959646583,
+  "monthly_costs": [
+    {
+      "network": "ethereum_mainnet",
+      "gas_units_proxy_measurement": 384428,
+      "execution_cost_eur_per_operation": 0.03960014955152858,
+      "estimated_monthly_execution_eur_30000_operations": 1188.0044865458574,
+      "raw_calldata_sensitivity_eur_per_operation": 0.0,
+      "monthly_execution_plus_raw_calldata_sensitivity_eur": 1188.0044865458574,
+      "note": "Execution-only quote plus a rough raw-calldata sensitivity for L2. This is not a total-fee quote or strict upper bound; rollup compression, transaction envelope, operator fees and batch state are not fully modeled."
+    },
+    {
+      "network": "arbitrum_one",
+      "gas_units_proxy_measurement": 384428,
+      "execution_cost_eur_per_operation": 0.015987109283745603,
+      "estimated_monthly_execution_eur_30000_operations": 479.6132785123681,
+      "raw_calldata_sensitivity_eur_per_operation": 0.00027029975033871363,
+      "monthly_execution_plus_raw_calldata_sensitivity_eur": 487.72227102252947,
+      "note": "Execution-only quote plus a rough raw-calldata sensitivity for L2. This is not a total-fee quote or strict upper bound; rollup compression, transaction envelope, operator fees and batch state are not fully modeled."
+    },
+    {
+      "network": "optimism_mainnet",
+      "gas_units_proxy_measurement": 384428,
+      "execution_cost_eur_per_operation": 0.0007987844959985749,
+      "estimated_monthly_execution_eur_30000_operations": 23.963534879957248,
+      "raw_calldata_sensitivity_eur_per_operation": 0.00027029975033871363,
+      "monthly_execution_plus_raw_calldata_sensitivity_eur": 32.07252739011866,
+      "note": "Execution-only quote plus a rough raw-calldata sensitivity for L2. This is not a total-fee quote or strict upper bound; rollup compression, transaction envelope, operator fees and batch state are not fully modeled."
+    }
+  ],
+  "central_hosting_scenario": {
+    "assumed_monthly_host_eur": 5.0,
+    "monthly_operations": 30000,
+    "cost_eur_per_operation": 0.00016666666666666666,
+    "note": "Illustrative low-cost single-server budget, not a measured quote; excludes backups, monitoring and engineering labor."
+  },
+  "nfr_compliance": [
+    {
+      "id": "NFR-01 F1 ≥ 0,90",
+      "measured": 0.9637771563777157,
+      "passed": true
+    },
+    {
+      "id": "NFR-02 Recall ≥ 0,90",
+      "measured": 0.9995538303663053,
+      "passed": true
+    },
+    {
+      "id": "NFR-03 FPR ≤ 0,05",
+      "measured": 0.24844167408726625,
+      "passed": false
+    },
+    {
+      "id": "NFR-04 ML p95 ≤ 250 мс",
+      "measured": 34.390051799999995,
+      "passed": true
+    },
+    {
+      "id": "NFR-05 reaction p95 ≤ 5 с",
+      "measured": 251.1049332038965,
+      "passed": true
+    },
+    {
+      "id": "NFR-06 gateway p95 ≤ 200 мс",
+      "measured": 82.95817677717423,
+      "passed": true
+    },
+    {
+      "id": "NFR-07 version + hash 100 %",
+      "measured": 100.0,
+      "passed": true
+    },
+    {
+      "id": "NFR-08 1000 device lookups",
+      "measured": 1000,
+      "passed": true
+    },
+    {
+      "id": "NFR-09 tampering 100 %",
+      "measured": 100.0,
+      "passed": true
+    }
+  ],
+  "api_security_checks": {
+    "passed": 9,
+    "total": 9
+  },
+  "contract_security_checks": {
+    "blocked": 6,
+    "total": 6
+  }
+}

@@ -1,0 +1,1237 @@
+{
+  "network": "Hardhat in-process local EVM",
+  "chain_id": 31337,
+  "operation": "DeviceQuarantine.recordDecision, normal decision, model version 2",
+  "data_size_note": "Only a fixed bytes32 input digest is sent on-chain; raw-flow byte length is not an ABI input.",
+  "repetitions_per_prior_record_count": 5,
+  "prior_record_counts": [
+    0,
+    1,
+    10,
+    100
+  ],
+  "gas_and_latency": [
+    {
+      "prior_records": 0,
+      "repeat": 1,
+      "prior_records_label": 0,
+      "gas_used": 135568,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 5.534165999999914,
+      "block_number": 7,
+      "transaction_hash": "0x092a88e3a5736828c9094f8c587d86f8f97b29321f58b4901b87d63058c7f123"
+    },
+    {
+      "prior_records": 0,
+      "repeat": 2,
+      "prior_records_label": 0,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 5.366543999999976,
+      "block_number": 8,
+      "transaction_hash": "0x74e0a15a892a766cbb766b1464f4ef51a3b1137f82ffaba72e5bdd9f65f93758"
+    },
+    {
+      "prior_records": 0,
+      "repeat": 3,
+      "prior_records_label": 0,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.5622860000000856,
+      "block_number": 9,
+      "transaction_hash": "0x38df0fd2b3d97187f57445a46ec0eb7bf550f89085963003458d3ce5a51ebacb"
+    },
+    {
+      "prior_records": 0,
+      "repeat": 4,
+      "prior_records_label": 0,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.504991999999902,
+      "block_number": 10,
+      "transaction_hash": "0x921d18369b0cf6420d224f53e0e175aadcf8b0f507355bc10db1284aa5cf11e0"
+    },
+    {
+      "prior_records": 0,
+      "repeat": 5,
+      "prior_records_label": 0,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.207002999999986,
+      "block_number": 11,
+      "transaction_hash": "0xc79fe513f646e18162585c728a022ef8680da4975d407731b506f0acc0322e4b"
+    },
+    {
+      "prior_records": 1,
+      "repeat": 1,
+      "prior_records_label": 1,
+      "gas_used": 118444,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.122323000000051,
+      "block_number": 14,
+      "transaction_hash": "0xfd6e62fbe7a864e41f35e805c948d6e578d650dc80410642f949721560b367a4"
+    },
+    {
+      "prior_records": 1,
+      "repeat": 2,
+      "prior_records_label": 1,
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.9457800000000134,
+      "block_number": 15,
+      "transaction_hash": "0x2b229388b907d07b383a61bfbd7680428c17b714ae4f8096c5c3f89b38b16d68"
+    },
+    {
+      "prior_records": 1,
+      "repeat": 3,
+      "prior_records_label": 1,
+      "gas_used": 118444,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.534355000000005,
+      "block_number": 16,
+      "transaction_hash": "0x3fb1108232fe5758373f1dae2d7845545c288ed6f549b87678b40082589cd9b1"
+    },
+    {
+      "prior_records": 1,
+      "repeat": 4,
+      "prior_records_label": 1,
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.9367070000000695,
+      "block_number": 17,
+      "transaction_hash": "0xcc5e500ecd9d20f7fb89eefe59f1860e950130ef221bc5aeafcd84891d4df7d2"
+    },
+    {
+      "prior_records": 1,
+      "repeat": 5,
+      "prior_records_label": 1,
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.559929000000011,
+      "block_number": 18,
+      "transaction_hash": "0xf011d3024e7e1da30e6bfa7854085e0e726628195bf12b3828620c88c3985e40"
+    },
+    {
+      "prior_records": 10,
+      "repeat": 1,
+      "prior_records_label": 10,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.514065999999957,
+      "block_number": 30,
+      "transaction_hash": "0x747fa414c24206c43ada2c1582fa0e5830cdeeb0e210387123d6834247ea90ac"
+    },
+    {
+      "prior_records": 10,
+      "repeat": 2,
+      "prior_records_label": 10,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.450221000000056,
+      "block_number": 31,
+      "transaction_hash": "0x126075ace6e127cc9fc4edb3f1da6785fc19d9845005ef97c1d5dd2e146d0a78"
+    },
+    {
+      "prior_records": 10,
+      "repeat": 3,
+      "prior_records_label": 10,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.8996250000000146,
+      "block_number": 32,
+      "transaction_hash": "0xb57ef76ed01386501ae9f868266275998438d2b11269b1c499d583e7fa79b75e"
+    },
+    {
+      "prior_records": 10,
+      "repeat": 4,
+      "prior_records_label": 10,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.4252019999998993,
+      "block_number": 33,
+      "transaction_hash": "0x637e6314818ef90d81ef8d0cc850b99846efb0242b85e29e63b6a42d1e7530e6"
+    },
+    {
+      "prior_records": 10,
+      "repeat": 5,
+      "prior_records_label": 10,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.4004979999999705,
+      "block_number": 34,
+      "transaction_hash": "0xe556ea69b061c603cdd6ad457d845db993a7cfa523519d237f17e0638319e708"
+    },
+    {
+      "prior_records": 100,
+      "repeat": 1,
+      "prior_records_label": 100,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 6.023572999999942,
+      "block_number": 136,
+      "transaction_hash": "0xbe245cce0da9b6b3b47e27a6a8171995584a0ecb249b85a08f018e1b353cb439"
+    },
+    {
+      "prior_records": 100,
+      "repeat": 2,
+      "prior_records_label": 100,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.242787000000135,
+      "block_number": 137,
+      "transaction_hash": "0x99266024d60d795c4a1d841904a1fece1e87888929b18cf81dd3e13427d5cf67"
+    },
+    {
+      "prior_records": 100,
+      "repeat": 3,
+      "prior_records_label": 100,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.865953999999874,
+      "block_number": 138,
+      "transaction_hash": "0x079b5930a2065a8f38176f60cdb04ae3c75c5b5057e20c1232ced040494734c8"
+    },
+    {
+      "prior_records": 100,
+      "repeat": 4,
+      "prior_records_label": 100,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.268122999999832,
+      "block_number": 139,
+      "transaction_hash": "0xe9658fbdf310cbfa852b96c4555a312324a2b930439604a0ef6e366a6f8c0318"
+    },
+    {
+      "prior_records": 100,
+      "repeat": 5,
+      "prior_records_label": 100,
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 5.673958000000312,
+      "block_number": 140,
+      "transaction_hash": "0xa3ade803eaa5d06a8365de4b45331cd9fb191675bd5a36532054aea8d33d01ae"
+    }
+  ],
+  "local_confirmation_latency": [
+    4.263047999999799,
+    4.013940999999704,
+    3.8088090000001102,
+    4.058760999999777,
+    3.345966999999746,
+    3.4920930000002954,
+    4.9524609999998574,
+    5.193876999999702,
+    4.145763999999872,
+    3.023718999999801,
+    2.3625339999998687,
+    3.8023990000001504,
+    3.4516739999999118,
+    2.805195999999796,
+    2.3007509999997637,
+    2.2515619999999217,
+    2.7267280000000937,
+    2.6166619999999057,
+    2.5593739999999343,
+    2.7055500000001302,
+    2.7156920000002174,
+    2.2608979999999974,
+    2.2906729999999698,
+    2.1207620000000134,
+    1.9809970000001158,
+    2.178595000000314,
+    2.303295999999591,
+    2.0302379999998266,
+    2.250684000000092,
+    1.986080000000129,
+    2.3729169999996884,
+    2.2264580000000933,
+    2.3736720000001696,
+    2.6055980000001,
+    2.8567079999997986,
+    2.178841999999804,
+    2.2014890000000378,
+    2.1863350000003265,
+    2.354015000000345,
+    2.4979530000000523,
+    2.4925190000003568,
+    2.5311110000002373,
+    2.569933000000219,
+    2.5154349999997976,
+    2.3493579999999383,
+    2.6047389999998813,
+    2.9171680000004017,
+    7.900077000000238,
+    6.86089899999979,
+    3.6465089999996962,
+    4.572921999999835,
+    3.0462710000001607,
+    3.642341000000215,
+    2.8799309999999423,
+    2.8869919999997364,
+    3.610291999999845,
+    2.4411450000002333,
+    2.5993100000000595,
+    5.520237999999608,
+    5.863734999999906,
+    5.620429000000058,
+    8.002747,
+    8.13817199999994,
+    7.622262999999748,
+    6.747199999999793,
+    7.040822000000389,
+    7.061809000000267,
+    7.183469000000059,
+    6.818868000000293,
+    5.733242999999675,
+    6.002746999999999,
+    5.987822999999935,
+    7.259544000000005,
+    5.993547000000035,
+    4.864510000000337,
+    3.8274200000000747,
+    3.4979020000000673,
+    3.405651999999918,
+    3.41586099999995,
+    3.939718999999968,
+    4.255384999999933,
+    4.587702000000263,
+    5.561137000000144,
+    5.257607999999891,
+    3.3303650000002563,
+    3.8911480000001575,
+    3.525126,
+    3.2558789999998226,
+    2.931615999999849,
+    3.727918000000045,
+    2.5530320000002575,
+    3.1332320000001346,
+    2.7858790000000226,
+    2.5399320000001353,
+    2.4713919999999234,
+    4.528809999999794,
+    4.830948999999691,
+    3.6936439999999493,
+    3.6597710000000916,
+    5.184897000000092
+  ],
+  "local_confirmation_trials": [
+    {
+      "repeat": 1,
+      "prior_records_label": "latency-100",
+      "gas_used": 135568,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.263047999999799,
+      "block_number": 142,
+      "transaction_hash": "0x2b4e5f54fd88a289cfcc77b15aa06c7639c3cea2bd8b07029c128a4189db0908"
+    },
+    {
+      "repeat": 2,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.013940999999704,
+      "block_number": 143,
+      "transaction_hash": "0xf83666ccd7fbacfab5569531016de5589e5cc87706c0df3e5882733345624e13"
+    },
+    {
+      "repeat": 3,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.8088090000001102,
+      "block_number": 144,
+      "transaction_hash": "0x54490c613005c7a15fc2faa59cec26e2562c25dd40e03960b2b5008181ae38c9"
+    },
+    {
+      "repeat": 4,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.058760999999777,
+      "block_number": 145,
+      "transaction_hash": "0x59135a9dc1d2632f1cb3fb5933f0465d3614abc7890a1982d859af0a53db6e07"
+    },
+    {
+      "repeat": 5,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.345966999999746,
+      "block_number": 146,
+      "transaction_hash": "0xe04e0db324e2e9232d6c11c8b78286eb7818bf01b3a8065df59fb51ded446caa"
+    },
+    {
+      "repeat": 6,
+      "prior_records_label": "latency-100",
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.4920930000002954,
+      "block_number": 147,
+      "transaction_hash": "0x962719025540fbdbe685ef6b30e5f71792f144dce29750e5f3b2bd5ca780f22a"
+    },
+    {
+      "repeat": 7,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.9524609999998574,
+      "block_number": 148,
+      "transaction_hash": "0x8df7b3ee9ec0b32d8449b7df868f859c8dd43b6c19d07ebe1b2cb595cf3fda87"
+    },
+    {
+      "repeat": 8,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 5.193876999999702,
+      "block_number": 149,
+      "transaction_hash": "0xc4b4f956fe945e5eeb4d078fcfabecfc6dc198540894aa839ae0ce9f77880670"
+    },
+    {
+      "repeat": 9,
+      "prior_records_label": "latency-100",
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.145763999999872,
+      "block_number": 150,
+      "transaction_hash": "0x5b1153575e86d5b34d2b4102b94b8f5608f13992252019d38ab1cd38fc6ed74b"
+    },
+    {
+      "repeat": 10,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.023718999999801,
+      "block_number": 151,
+      "transaction_hash": "0x6e84a8aa5be4b4ebfbdb28c2745a5b22264427fd4cd896f5c540d4d02597516e"
+    },
+    {
+      "repeat": 11,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.3625339999998687,
+      "block_number": 152,
+      "transaction_hash": "0x846ce1520c37e172fabad0cfd2ae9851f4aeaae5e7ca5d323596a5ddf95954bd"
+    },
+    {
+      "repeat": 12,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.8023990000001504,
+      "block_number": 153,
+      "transaction_hash": "0x94f5a5904af53127319507b3bb3442bab3656b32ce4ca8b6e1bfa5394a708b2d"
+    },
+    {
+      "repeat": 13,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.4516739999999118,
+      "block_number": 154,
+      "transaction_hash": "0x8296dea3d06cd25626fcd66279a7dedb6eabb8490f8c46baa1754349779aa2ea"
+    },
+    {
+      "repeat": 14,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.805195999999796,
+      "block_number": 155,
+      "transaction_hash": "0x3e2b428837bdbf0ebad4a4b24c6a544ae73500687cb3099a5ec4bd57c9a3737a"
+    },
+    {
+      "repeat": 15,
+      "prior_records_label": "latency-100",
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.3007509999997637,
+      "block_number": 156,
+      "transaction_hash": "0x120b1739dc2966647ce760ae62add753c2c16d7db579ec8c70c4cadcd8cdcfa5"
+    },
+    {
+      "repeat": 16,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.2515619999999217,
+      "block_number": 157,
+      "transaction_hash": "0xf55b369798824577f1649378eb38b0365112dc0121d36ddeec0b10fc4ecafeda"
+    },
+    {
+      "repeat": 17,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.7267280000000937,
+      "block_number": 158,
+      "transaction_hash": "0x10a3d209615a210c69315cf5422e3ab0648888905cbac41aabef36d89290a827"
+    },
+    {
+      "repeat": 18,
+      "prior_records_label": "latency-100",
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.6166619999999057,
+      "block_number": 159,
+      "transaction_hash": "0xfd5839c8605932a76e07cbba6ead35e486263693c47f707a0315d2b56ec1d897"
+    },
+    {
+      "repeat": 19,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.5593739999999343,
+      "block_number": 160,
+      "transaction_hash": "0x31828cf595c795ed29b2f9fbcf0538d6889cbbf14961b552e17c1b1a1801e7fa"
+    },
+    {
+      "repeat": 20,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.7055500000001302,
+      "block_number": 161,
+      "transaction_hash": "0xdfb958635e1cde29c440603d547b31668ebd73d9fb1508d6b1d5a1ba72e0cf72"
+    },
+    {
+      "repeat": 21,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.7156920000002174,
+      "block_number": 162,
+      "transaction_hash": "0xf933fa7d800fcca0abe234c40504adb710ff21cebe9960724b86039d785ef82f"
+    },
+    {
+      "repeat": 22,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.2608979999999974,
+      "block_number": 163,
+      "transaction_hash": "0xa0f8dad02dd3a37662832dbebb86e184c89d8380ade8b5cc9f9a384f8e4ba347"
+    },
+    {
+      "repeat": 23,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.2906729999999698,
+      "block_number": 164,
+      "transaction_hash": "0x5be19bfc3af36885051d6b0a3326775388893e6875be8d8816857b9ad74d50dd"
+    },
+    {
+      "repeat": 24,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.1207620000000134,
+      "block_number": 165,
+      "transaction_hash": "0x8ee12fa2cd268aa5022e42d60519d4e841c31f26f67ed95c547ee0f985918baf"
+    },
+    {
+      "repeat": 25,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 1.9809970000001158,
+      "block_number": 166,
+      "transaction_hash": "0x40f62596cc5862e58a3d03ce14bdb2930945d74bf031594b56307a3a3071dc9b"
+    },
+    {
+      "repeat": 26,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.178595000000314,
+      "block_number": 167,
+      "transaction_hash": "0xc5029ed0c6b9d6a125fa5bfebbe9faa9fbfdbcf8525555b17b020aef8d14380c"
+    },
+    {
+      "repeat": 27,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.303295999999591,
+      "block_number": 168,
+      "transaction_hash": "0x85bb8c4b224f3f74d12c2f34d766e1c6d2e842820e8a63b7a8420c252c7cbab0"
+    },
+    {
+      "repeat": 28,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.0302379999998266,
+      "block_number": 169,
+      "transaction_hash": "0xd179faa0a4ce27e9cf856b33556ea858968b7e73c0dc81c99eac9d8151be491d"
+    },
+    {
+      "repeat": 29,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.250684000000092,
+      "block_number": 170,
+      "transaction_hash": "0x78c932fb98c7ac7bd56c165236c5fb1aeb475d771e243ba569d10b82ff7c3a7c"
+    },
+    {
+      "repeat": 30,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 1.986080000000129,
+      "block_number": 171,
+      "transaction_hash": "0x9d925d9d840d98c1f15bb3641dbf9528532ed7b7782fc36acc2baceba03c5a20"
+    },
+    {
+      "repeat": 31,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.3729169999996884,
+      "block_number": 172,
+      "transaction_hash": "0xe2178a26cba0d732b3e6970ed5a00d464516910b56795a5b7a43080e13481eac"
+    },
+    {
+      "repeat": 32,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.2264580000000933,
+      "block_number": 173,
+      "transaction_hash": "0x153310415163e82c2d259c2ed9fc9079fabb569b869640c38321fa4899059c1a"
+    },
+    {
+      "repeat": 33,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.3736720000001696,
+      "block_number": 174,
+      "transaction_hash": "0xdc6ba91255694b1d59a9488bd76700a5eb53a02526f21a67ecdf071083eac3e4"
+    },
+    {
+      "repeat": 34,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.6055980000001,
+      "block_number": 175,
+      "transaction_hash": "0x808162654e7cc386b2c13f02ba184b2e12a7fc1b663a3175afa9112311613a68"
+    },
+    {
+      "repeat": 35,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.8567079999997986,
+      "block_number": 176,
+      "transaction_hash": "0x5c215decffb7c004a9baf23fb3163f28d42c7866adc57ee7b2b990d2981f1fec"
+    },
+    {
+      "repeat": 36,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.178841999999804,
+      "block_number": 177,
+      "transaction_hash": "0xe66cfa6199e03521ac1db9f5a970a4820037fedbc522f7dfada08f4cd072b354"
+    },
+    {
+      "repeat": 37,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.2014890000000378,
+      "block_number": 178,
+      "transaction_hash": "0x3c658a5bf5beb0902670ce88d06f5634a9ee09276a57e39e57b0f9ba4300e72b"
+    },
+    {
+      "repeat": 38,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.1863350000003265,
+      "block_number": 179,
+      "transaction_hash": "0xf7259e7cf221a86f42436e9eeb827134ca70f3a7ed5330b0c3fd0f3602c2eb3e"
+    },
+    {
+      "repeat": 39,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.354015000000345,
+      "block_number": 180,
+      "transaction_hash": "0x8a4eaac02927f358a813f5b83daca29dc231c42653e6fb9b7c5e01da6de75334"
+    },
+    {
+      "repeat": 40,
+      "prior_records_label": "latency-100",
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.4979530000000523,
+      "block_number": 181,
+      "transaction_hash": "0x20be87d2aaf7208fe018e477ea9dfbc570fa5e7dbfe6de79e33bf0491733a8bc"
+    },
+    {
+      "repeat": 41,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.4925190000003568,
+      "block_number": 182,
+      "transaction_hash": "0x83679ebb1533b52e7759d5e55736c04f1555cf31a81c8df7f7c38c425a5057cb"
+    },
+    {
+      "repeat": 42,
+      "prior_records_label": "latency-100",
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.5311110000002373,
+      "block_number": 183,
+      "transaction_hash": "0xc21eb029e134a8a518d3af0009713aa870065bef2db06fe903643e3f3675abb6"
+    },
+    {
+      "repeat": 43,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.569933000000219,
+      "block_number": 184,
+      "transaction_hash": "0x78907859f21cfcf6b9eee29cac0dba003ca41a07f5b88177a57115ba9c493a6f"
+    },
+    {
+      "repeat": 44,
+      "prior_records_label": "latency-100",
+      "gas_used": 118444,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.5154349999997976,
+      "block_number": 185,
+      "transaction_hash": "0x218e62a18b3b385fdfbe23615a414c125d839005a4277b70ba09c3500ee59d95"
+    },
+    {
+      "repeat": 45,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.3493579999999383,
+      "block_number": 186,
+      "transaction_hash": "0x8577705c8038aa8b838028f55aa34fd2a2013b61fdf873e404d64fb9d6cc8452"
+    },
+    {
+      "repeat": 46,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.6047389999998813,
+      "block_number": 187,
+      "transaction_hash": "0xea46603f330a90c0c918d4eb1f544ebe6444f174c3e7d921dff3b4cb2dff8a85"
+    },
+    {
+      "repeat": 47,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.9171680000004017,
+      "block_number": 188,
+      "transaction_hash": "0xde0ce6f28a4ea297191c9605bf235a7b4ecebeee905d9d8adf81094186fe08b0"
+    },
+    {
+      "repeat": 48,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 7.900077000000238,
+      "block_number": 189,
+      "transaction_hash": "0x6e02b57781de3f58deb5f45c03752699eb7066db33f3436753a21b82176fb5c6"
+    },
+    {
+      "repeat": 49,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 6.86089899999979,
+      "block_number": 190,
+      "transaction_hash": "0x11f7760d935c5b27d14be142ab4988fbb8c1f3b2727a2f6b2ff9fc9faf9b9726"
+    },
+    {
+      "repeat": 50,
+      "prior_records_label": "latency-100",
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.6465089999996962,
+      "block_number": 191,
+      "transaction_hash": "0x44cb5b4f5eb679d42d7869c413bc2ead79139f7939bf1a6d71a1f840d6cb201f"
+    },
+    {
+      "repeat": 51,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.572921999999835,
+      "block_number": 192,
+      "transaction_hash": "0x1a7dda24f8a8589fba1210990baf199a6df6a3c47263c1b7a784b64d3d36bb43"
+    },
+    {
+      "repeat": 52,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.0462710000001607,
+      "block_number": 193,
+      "transaction_hash": "0x003439abd2dc2ab8b25080458fb39e76f93adb8647e1edc056dfcf2e2b1821d6"
+    },
+    {
+      "repeat": 53,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.642341000000215,
+      "block_number": 194,
+      "transaction_hash": "0x7e3d182152bc19ebc7361c132ccf4f8b1da691f078b6353c687a877ddf520ddd"
+    },
+    {
+      "repeat": 54,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.8799309999999423,
+      "block_number": 195,
+      "transaction_hash": "0x453b3406bd7229edd2c22c792856da1242f0be013cc752c7826f7c55a6cf0da7"
+    },
+    {
+      "repeat": 55,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.8869919999997364,
+      "block_number": 196,
+      "transaction_hash": "0x44dbfdf4a422d0aed20077a878dc55ab95f3af21d6d90743ef07e270f576b6ba"
+    },
+    {
+      "repeat": 56,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.610291999999845,
+      "block_number": 197,
+      "transaction_hash": "0x2230f87434e50f433c5478f9cc3794efdcd18dfc5c50160172c344c7d5d4a332"
+    },
+    {
+      "repeat": 57,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.4411450000002333,
+      "block_number": 198,
+      "transaction_hash": "0x392438ebe1f1b66e01928e4291440990d8e88c8c4b088a5ca8a9304f2098f42a"
+    },
+    {
+      "repeat": 58,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.5993100000000595,
+      "block_number": 199,
+      "transaction_hash": "0xf65f21098d32ccf860ec131ac19ed7b8510e3f964bb94cd05222b6518a6d743d"
+    },
+    {
+      "repeat": 59,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 5.520237999999608,
+      "block_number": 200,
+      "transaction_hash": "0x6d2e51c15ffab06d28fb9b3dcecc522c9eb037f855bddb127b81a63fbe6ca5bc"
+    },
+    {
+      "repeat": 60,
+      "prior_records_label": "latency-100",
+      "gas_used": 118444,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 5.863734999999906,
+      "block_number": 201,
+      "transaction_hash": "0x59435392ec0ec80f8f6c8936f3abcdfd0d72f1aa27925701ca95e1321eb08794"
+    },
+    {
+      "repeat": 61,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 5.620429000000058,
+      "block_number": 202,
+      "transaction_hash": "0x48ca18f39004af8ab83f359734f71cce15e42da479784c3e76904a3bab155002"
+    },
+    {
+      "repeat": 62,
+      "prior_records_label": "latency-100",
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 8.002747,
+      "block_number": 203,
+      "transaction_hash": "0xf4a7be975b4e0dc134767754251de6dd6cce556ab828862a4e1c18822a8f95e1"
+    },
+    {
+      "repeat": 63,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 8.13817199999994,
+      "block_number": 204,
+      "transaction_hash": "0x9ec614c9626765f6f40cc186995f9f52e0a18f4b353394b1281a5c4e0e720a23"
+    },
+    {
+      "repeat": 64,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 7.622262999999748,
+      "block_number": 205,
+      "transaction_hash": "0x514399c36346217ac5077a1490596d5d9cfe549dbae00e4e4db3887322c0f405"
+    },
+    {
+      "repeat": 65,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 6.747199999999793,
+      "block_number": 206,
+      "transaction_hash": "0x110a74417c9a5efcd8e87d871992c1a967fa8fbae56a1c7ae36856e67a25d99a"
+    },
+    {
+      "repeat": 66,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 7.040822000000389,
+      "block_number": 207,
+      "transaction_hash": "0x7bef457cae2f89529eb8a822e32176c4c65ac4cd0a688619889d1dd162a51dc6"
+    },
+    {
+      "repeat": 67,
+      "prior_records_label": "latency-100",
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 7.061809000000267,
+      "block_number": 208,
+      "transaction_hash": "0x49a295cc088ad1d01b383040d2e47fbb18600fda5710dd144e2c98a1434b79a4"
+    },
+    {
+      "repeat": 68,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 7.183469000000059,
+      "block_number": 209,
+      "transaction_hash": "0xb22f2d388586277a0b33d73a9aac0221a1ea9e0eef50fd79623b7ea5451be308"
+    },
+    {
+      "repeat": 69,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 6.818868000000293,
+      "block_number": 210,
+      "transaction_hash": "0xb5bfc3b30dd9948013cb0630d9937ef9a160ffa363f9e3cddf2a2709e0d34e7c"
+    },
+    {
+      "repeat": 70,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 5.733242999999675,
+      "block_number": 211,
+      "transaction_hash": "0xcc3bb0ca3057f51576052fe8a018376c0d48010388900a9ffea107888b59d3d1"
+    },
+    {
+      "repeat": 71,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 6.002746999999999,
+      "block_number": 212,
+      "transaction_hash": "0x6c66c0c7f2e9e2d1641c3fc6e42241f7387a15f4500381cdecdd65d92ad30e6b"
+    },
+    {
+      "repeat": 72,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 5.987822999999935,
+      "block_number": 213,
+      "transaction_hash": "0xfecd9a7bc9f1977bd42abd2df07f9b012cef0f5f3eb9d9781127822db982c01c"
+    },
+    {
+      "repeat": 73,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 7.259544000000005,
+      "block_number": 214,
+      "transaction_hash": "0xadff28b4f4ae136d9ecc9abddee772ba1c52db0b6b06a7c6131bdb9123cbd5e9"
+    },
+    {
+      "repeat": 74,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 5.993547000000035,
+      "block_number": 215,
+      "transaction_hash": "0x078dc0f5f8ee47e80b6b87ed05c5163357cfadfccc6384f562e619d10232d532"
+    },
+    {
+      "repeat": 75,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.864510000000337,
+      "block_number": 216,
+      "transaction_hash": "0x80a70fd9601fcabe739c9943447be7885191d48988b00e2e9d7eb5d57b6242d0"
+    },
+    {
+      "repeat": 76,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.8274200000000747,
+      "block_number": 217,
+      "transaction_hash": "0x4e72db45f341f05b22d2a9b99f17970995b91f8f21c4547a9227e7c84fe96f83"
+    },
+    {
+      "repeat": 77,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.4979020000000673,
+      "block_number": 218,
+      "transaction_hash": "0x781dd18f22798ea566f9dbe1838df33fbddcf4a2270b7cedc81734c32e354ea3"
+    },
+    {
+      "repeat": 78,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.405651999999918,
+      "block_number": 219,
+      "transaction_hash": "0x989cbcbc288cf13fc150d46c3583705239270646ac8d5030f9d4598743eb4455"
+    },
+    {
+      "repeat": 79,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.41586099999995,
+      "block_number": 220,
+      "transaction_hash": "0x6b1c7cbe8acf15c80a3a306bf95b0be346133f0041f1180fd5362ab12da581f3"
+    },
+    {
+      "repeat": 80,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.939718999999968,
+      "block_number": 221,
+      "transaction_hash": "0x2ff9e7e01ca6d848206a24e14117aa7f1985c1296b3b0c3d04994655f3631e10"
+    },
+    {
+      "repeat": 81,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.255384999999933,
+      "block_number": 222,
+      "transaction_hash": "0x00c0cefda8771396e15d2a4b570e1aab455f2fe8449e87d015e93dd925d4028a"
+    },
+    {
+      "repeat": 82,
+      "prior_records_label": "latency-100",
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.587702000000263,
+      "block_number": 223,
+      "transaction_hash": "0xa5400a748c10d14413fe5dc3593adf73ef2371e20b99e982aaaa938338f191ab"
+    },
+    {
+      "repeat": 83,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 5.561137000000144,
+      "block_number": 224,
+      "transaction_hash": "0xa9f9fcc903b05c1fe2e5499838bc0b24790deed48dd97f8fa1cbafd621b4ed35"
+    },
+    {
+      "repeat": 84,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 5.257607999999891,
+      "block_number": 225,
+      "transaction_hash": "0x33bc4c0715b80c5e8702e5832eec6d2ab6067051d8859d9716c5c07cf5b6182c"
+    },
+    {
+      "repeat": 85,
+      "prior_records_label": "latency-100",
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.3303650000002563,
+      "block_number": 226,
+      "transaction_hash": "0x398c0c48868cb59f218c74cf07f44d1b68d85de13aa831604f96d01478b57263"
+    },
+    {
+      "repeat": 86,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.8911480000001575,
+      "block_number": 227,
+      "transaction_hash": "0xbb24b791ff55b0fad01a2e97a026d6b3eca59daea6de8e4e8ea101a8bebb6cd6"
+    },
+    {
+      "repeat": 87,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.525126,
+      "block_number": 228,
+      "transaction_hash": "0x56beae1b875d82fb482a4f86206cd8c62e250afd1d7958eb80158a0733b290ec"
+    },
+    {
+      "repeat": 88,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.2558789999998226,
+      "block_number": 229,
+      "transaction_hash": "0x9b1c81a3ef7e54233c9763789dd94de2170faac64331e00287f4ddf579731aa9"
+    },
+    {
+      "repeat": 89,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.931615999999849,
+      "block_number": 230,
+      "transaction_hash": "0x04434451556bc3a252c91bf20cf863a223c43341d7b357fd568c3c85716c89d2"
+    },
+    {
+      "repeat": 90,
+      "prior_records_label": "latency-100",
+      "gas_used": 118456,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.727918000000045,
+      "block_number": 231,
+      "transaction_hash": "0x6a12305d083a00af6d3a4087a7353815b1d82438729a75717364e71366c97874"
+    },
+    {
+      "repeat": 91,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.5530320000002575,
+      "block_number": 232,
+      "transaction_hash": "0xe7d85822c95aa730d5750ab9dd484b83a564c7356db59d30c11b470f2f00911d"
+    },
+    {
+      "repeat": 92,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.1332320000001346,
+      "block_number": 233,
+      "transaction_hash": "0xae08f62c2cf80ad37be6f80ba23e3b2a320933e03322e6f490c06a72893f5046"
+    },
+    {
+      "repeat": 93,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.7858790000000226,
+      "block_number": 234,
+      "transaction_hash": "0xaef953775c0de7e9d395e58b52440296f3e812a5ee82edf6ae8c5bbd3f2612c2"
+    },
+    {
+      "repeat": 94,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.5399320000001353,
+      "block_number": 235,
+      "transaction_hash": "0x53c66ed0d5600453976e5903a2ae60f235038f5239c71d95e3840998833dadf7"
+    },
+    {
+      "repeat": 95,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 2.4713919999999234,
+      "block_number": 236,
+      "transaction_hash": "0xf3f88853617768c180b9dbd8fd6fc359da73574abcbeabb0a27c8982dfcdda6a"
+    },
+    {
+      "repeat": 96,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.528809999999794,
+      "block_number": 237,
+      "transaction_hash": "0x9c66c8f6fdbfe399f2db02e8e834ea60c0d896bdb4e7f608f3812d742a5fadfe"
+    },
+    {
+      "repeat": 97,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 4.830948999999691,
+      "block_number": 238,
+      "transaction_hash": "0x8e863136b57ae514cffbd97cca35846e90ff61583b3940030095e38e90a49973"
+    },
+    {
+      "repeat": 98,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.6936439999999493,
+      "block_number": 239,
+      "transaction_hash": "0xb03fa1724fd2ef445c626f9c5bbf8bc0de3838a0a204931d177bca99293d3deb"
+    },
+    {
+      "repeat": 99,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 3.6597710000000916,
+      "block_number": 240,
+      "transaction_hash": "0xff25ce70af420042e9aee04fbc16df81819448b23feea6c4e2ce0bb19783d11c"
+    },
+    {
+      "repeat": 100,
+      "prior_records_label": "latency-100",
+      "gas_used": 118468,
+      "calldata_bytes": 164,
+      "submit_to_receipt_ms": 5.184897000000092,
+      "block_number": 241,
+      "transaction_hash": "0x636a567fd06ec20a8a329baeb80e618aeac0439444500e50a3e867691ecf117e"
+    }
+  ],
+  "nfr_device_scale": {
+    "registered_devices": 1000,
+    "registrations_succeeded": 1000,
+    "registration_time_ms": 3276.8909569999996,
+    "lookup_count": 1000,
+    "found_count": 1000,
+    "lookup_time_ms": 1211.014991
+  },
+  "audit_coverage": {
+    "decisions": 231,
+    "all_have_model_version_2": true,
+    "all_have_32_byte_input_hash": true
+  },
+  "contracts": {
+    "registry": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+    "access_control": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    "quarantine": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9"
+  }
+}

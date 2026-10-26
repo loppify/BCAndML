@@ -1,0 +1,10 @@
+nfr,measured,passed
+"NFR-01 F1 ≥ 0,90",0.9637771563777157,True
+"NFR-02 Recall ≥ 0,90",0.9995538303663053,True
+"NFR-03 FPR ≤ 0,05",0.24844167408726625,False
+NFR-04 ML p95 ≤ 250 мс,34.390051799999995,True
+NFR-05 reaction p95 ≤ 5 с,251.1049332038965,True
+NFR-06 gateway p95 ≤ 200 мс,82.95817677717423,True
+NFR-07 version + hash 100 %,100.0,True
+NFR-08 1000 device lookups,1000.0,True
+NFR-09 tampering 100 %,100.0,True

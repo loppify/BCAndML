@@ -1,0 +1,43 @@
+{
+  "network": "Hardhat local EVM, chain ID 31337",
+  "target_contracts": {
+    "registry": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+    "access_control": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    "quarantine": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9"
+  },
+  "attempted_attacks": 6,
+  "blocked_attacks": 6,
+  "checks": [
+    {
+      "attack": "Прямий виклик recordDecision без ORACLE_ROLE",
+      "blocked": true,
+      "evidence": "VM Exception while processing transaction: reverted with custom error 'AccessControlUnauthorizedAccount(\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\", \"0x68e79a7bf1e0bc45d0a330c573bc367f9cf464fd326078812f301165fbda4ef1\")'"
+    },
+    {
+      "attack": "Надання operator-доступу сторонньою адресою",
+      "blocked": true,
+      "evidence": "VM Exception while processing transaction: reverted with custom error 'NotDeviceOwner(\"0x548e53bc318365ee5c00b079da5d4ff440937bb5ad16a1314de3ce6f155be806\", \"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\")'"
+    },
+    {
+      "attack": "Реєстрація нової версії моделі без ADMIN_ROLE",
+      "blocked": true,
+      "evidence": "VM Exception while processing transaction: reverted with custom error 'AccessControlUnauthorizedAccount(\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\", \"0x0000000000000000000000000000000000000000000000000000000000000000\")'"
+    },
+    {
+      "attack": "Confidence поза діапазоном 0..10000",
+      "blocked": true,
+      "evidence": "VM Exception while processing transaction: reverted with custom error 'InvalidConfidence(10001)'"
+    },
+    {
+      "attack": "Повторне подання того самого inputHash",
+      "blocked": true,
+      "evidence": "VM Exception while processing transaction: reverted with custom error 'DecisionAlreadyProcessed(\"0x548e53bc318365ee5c00b079da5d4ff440937bb5ad16a1314de3ce6f155be806\", \"0xfc4b0b65376692bf5ce8e18ed9055598d0f12947dda507e8a263c23e362cd14a\")'"
+    },
+    {
+      "attack": "Oracle-запис під час аварійної паузи",
+      "blocked": true,
+      "evidence": "VM Exception while processing transaction: reverted with custom error 'EnforcedPause()'"
+    }
+  ],
+  "assertions_passed": true
+}

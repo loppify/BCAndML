@@ -1,0 +1,282 @@
+{
+  "network": "Hardhat local EVM and FastAPI on one local host",
+  "chain_id": 31337,
+  "device_id": "0x6219ece73cc83006873f16d43117698a87575bfb758c3b9587643161340a3f34",
+  "simulated_load_scope": "POST /api/gateway/check read path, 10 requests per concurrent virtual user; inference write-path measured serially in five E2E trials.",
+  "gateway_load": [
+    {
+      "simulated_concurrent_users": 10,
+      "requests_per_user": 10,
+      "requests_total": 100,
+      "successful_http_200": 100,
+      "failed_or_denied": 0,
+      "elapsed_seconds": 3.403561719984282,
+      "throughput_requests_per_second": 29.380986221828177,
+      "latency_ms": {
+        "p50": 324.9353449937189,
+        "p95": 472.71525303658564,
+        "p99": 519.0462827152808,
+        "max": 561.3830099755432
+      },
+      "error_examples": []
+    },
+    {
+      "simulated_concurrent_users": 50,
+      "requests_per_user": 10,
+      "requests_total": 500,
+      "successful_http_200": 500,
+      "failed_or_denied": 0,
+      "elapsed_seconds": 17.415988339984324,
+      "throughput_requests_per_second": 28.709252110147546,
+      "latency_ms": {
+        "p50": 1701.2080229906132,
+        "p95": 2263.2405435448163,
+        "p99": 2526.134835490375,
+        "max": 2723.8767500093672
+      },
+      "error_examples": []
+    },
+    {
+      "simulated_concurrent_users": 100,
+      "requests_per_user": 10,
+      "requests_total": 1000,
+      "successful_http_200": 1000,
+      "failed_or_denied": 0,
+      "elapsed_seconds": 37.79121528001269,
+      "throughput_requests_per_second": 26.461176032327483,
+      "latency_ms": {
+        "p50": 3812.6337319990853,
+        "p95": 4751.702710482641,
+        "p99": 4926.63230429258,
+        "max": 5074.934431002475
+      },
+      "error_examples": []
+    }
+  ],
+  "gateway_nfr_1000_sequential": {
+    "simulated_concurrent_users": 1,
+    "requests_per_user": 1000,
+    "requests_total": 1000,
+    "successful_http_200": 1000,
+    "failed_or_denied": 0,
+    "elapsed_seconds": 50.289851679990534,
+    "throughput_requests_per_second": 19.884727566175798,
+    "latency_ms": {
+      "p50": 46.245414996519685,
+      "p95": 82.95817677717423,
+      "p99": 100.14197909651556,
+      "max": 113.91726700821891
+    },
+    "error_examples": []
+  },
+  "api_inference_e2e": {
+    "repetitions": 5,
+    "samples": [
+      {
+        "repeat": 1,
+        "latency_ms": 184.9647889903281,
+        "status": 200,
+        "is_attack": false,
+        "tx_hash": "0x6b0d406cea251f58b65d1c250541e086d76080a60a59a6204a0f0e9787a92bc8",
+        "confidence_bps": 0
+      },
+      {
+        "repeat": 2,
+        "latency_ms": 194.7338340105489,
+        "status": 200,
+        "is_attack": false,
+        "tx_hash": "0x375a0371c49df9764a5fe1864b8a65f1bb946196be32823e48784509bc49daf6",
+        "confidence_bps": 0
+      },
+      {
+        "repeat": 3,
+        "latency_ms": 192.8889069822617,
+        "status": 200,
+        "is_attack": false,
+        "tx_hash": "0x539e1aa88cbb8ba437783dfb15eb320d5c62781446038bd3f62b547c97d325b4",
+        "confidence_bps": 0
+      },
+      {
+        "repeat": 4,
+        "latency_ms": 200.27160199242644,
+        "status": 200,
+        "is_attack": false,
+        "tx_hash": "0x2a3c233f817844a1c867721f58f5aae0fd580705bcdf4e20c0fbddc563f994d4",
+        "confidence_bps": 0
+      },
+      {
+        "repeat": 5,
+        "latency_ms": 263.813266006764,
+        "status": 200,
+        "is_attack": false,
+        "tx_hash": "0xd5d155776d689c2860dfe23ba8d4c466b9ba235ba5f972b2d5a1c24bc0faa6b6",
+        "confidence_bps": 0
+      }
+    ],
+    "mean_ms": 207.33447959646583,
+    "p95_ms": 251.1049332038965
+  },
+  "component_breakdown": {
+    "repetitions": 5,
+    "samples": [
+      {
+        "repeat": 1,
+        "flow_id": "lab4-component-1-d98c606d-8909-486d-acd9-fe82e52bee41",
+        "is_attack": false,
+        "confidence_bps": 0,
+        "shap_factors": 5,
+        "tx_hash": "0x5057e553367ec581862312268067b3211c031533bb9ad9e8153d1109bb935a30",
+        "stage_ms": {
+          "state_read": 21.299387997714803,
+          "canonicalization_and_hash": 0.2377720084041357,
+          "model_prediction": 35.3362140012905,
+          "shap_explanation": 13.850322022335604,
+          "sqlite_writes": 6.1161849880591035,
+          "oracle_transaction_and_receipt": 87.26993598975241,
+          "sqlite_event_mirror": 76.66071600397117,
+          "sum_instrumented_stages": 240.77053301152773,
+          "total": 240.86539400741458
+        }
+      },
+      {
+        "repeat": 2,
+        "flow_id": "lab4-component-2-bf0a1bb9-ed70-4dc6-849b-1bd92706b5d0",
+        "is_attack": false,
+        "confidence_bps": 0,
+        "shap_factors": 5,
+        "tx_hash": "0x5aad5ce9ac24c79447c51aa7f144aec3134f8ec7aa09831fbc2680467227e191",
+        "stage_ms": {
+          "state_read": 16.108676994917914,
+          "canonicalization_and_hash": 0.22298999829217792,
+          "model_prediction": 37.77166301733814,
+          "shap_explanation": 14.39416198991239,
+          "sqlite_writes": 5.853281996678561,
+          "oracle_transaction_and_receipt": 85.35232400754467,
+          "sqlite_event_mirror": 85.94972500577569,
+          "sum_instrumented_stages": 245.65282301045954,
+          "total": 245.76311200507917
+        }
+      },
+      {
+        "repeat": 3,
+        "flow_id": "lab4-component-3-0cdba411-5d12-47e9-af40-c966c929fac0",
+        "is_attack": false,
+        "confidence_bps": 0,
+        "shap_factors": 5,
+        "tx_hash": "0x378ea81c631327f4eaa2e1416877f04b71a3f07bbdb6cc6a4a90a50f239d99fa",
+        "stage_ms": {
+          "state_read": 14.665761002106592,
+          "canonicalization_and_hash": 0.25120601640082896,
+          "model_prediction": 36.316376994363964,
+          "shap_explanation": 17.849947995273396,
+          "sqlite_writes": 5.776880978373811,
+          "oracle_transaction_and_receipt": 83.25968799181283,
+          "sqlite_event_mirror": 101.67461601668037,
+          "sum_instrumented_stages": 259.7944769950118,
+          "total": 259.89970698719844
+        }
+      },
+      {
+        "repeat": 4,
+        "flow_id": "lab4-component-4-d69af3e5-ff72-478d-843a-4e9024c5df3b",
+        "is_attack": false,
+        "confidence_bps": 0,
+        "shap_factors": 5,
+        "tx_hash": "0x1b0d6ff1aee4845543a320d5d3d9288ca1192cd9e08de47cc171cd62d7ef5622",
+        "stage_ms": {
+          "state_read": 16.262126999208704,
+          "canonicalization_and_hash": 0.19464301294647157,
+          "model_prediction": 32.813936995808035,
+          "shap_explanation": 18.266717001097277,
+          "sqlite_writes": 6.392236013198271,
+          "oracle_transaction_and_receipt": 101.40946801402606,
+          "sqlite_event_mirror": 84.03370500309393,
+          "sum_instrumented_stages": 259.37283303937875,
+          "total": 259.46180798928253
+        }
+      },
+      {
+        "repeat": 5,
+        "flow_id": "lab4-component-5-65650903-7a0d-4ee5-92be-79e2acafbaa2",
+        "is_attack": false,
+        "confidence_bps": 0,
+        "shap_factors": 5,
+        "tx_hash": "0x21d4c600a7a3ceb73c6eb76d47545ecb520232b94466e5f697254433955b274f",
+        "stage_ms": {
+          "state_read": 17.735216999426484,
+          "canonicalization_and_hash": 0.25878698215819895,
+          "model_prediction": 34.350047004409134,
+          "shap_explanation": 14.548818988259882,
+          "sqlite_writes": 4.603092005709186,
+          "oracle_transaction_and_receipt": 119.43791699013673,
+          "sqlite_event_mirror": 98.90087897656485,
+          "sum_instrumented_stages": 289.83475794666447,
+          "total": 289.9280989950057
+        }
+      }
+    ],
+    "mean_stage_ms": {
+      "state_read": 17.2142339986749,
+      "canonicalization_and_hash": 0.23307960364036262,
+      "model_prediction": 35.317647602641955,
+      "shap_explanation": 15.78199359937571,
+      "sqlite_writes": 5.7483351964037865,
+      "oracle_transaction_and_receipt": 95.34586659865454,
+      "sqlite_event_mirror": 89.4439282012172,
+      "sum_instrumented_stages": 259.08508480060846,
+      "total": 259.1836239967961
+    },
+    "e2e_total_ms": [
+      240.86539400741458,
+      245.76311200507917,
+      259.89970698719844,
+      259.46180798928253,
+      289.9280989950057
+    ]
+  },
+  "centralized_baseline": {
+    "repetitions": 5,
+    "samples": [
+      {
+        "repeat": 1,
+        "latency_ms": 45.217542006867006,
+        "flow_id": "central-1-93696bed-0fa9-49b4-a4db-86267ae42dd6",
+        "stored": true
+      },
+      {
+        "repeat": 2,
+        "latency_ms": 51.375878014368936,
+        "flow_id": "central-2-107ab1c2-753d-45fa-a240-4fe439a6e4cc",
+        "stored": true
+      },
+      {
+        "repeat": 3,
+        "latency_ms": 54.88528200658038,
+        "flow_id": "central-3-d3b8f236-34e6-439b-bc06-567d75bbc3c6",
+        "stored": true
+      },
+      {
+        "repeat": 4,
+        "latency_ms": 57.690489978995174,
+        "flow_id": "central-4-00288971-4251-487c-8d5c-50d20cb8e9f7",
+        "stored": true
+      },
+      {
+        "repeat": 5,
+        "latency_ms": 51.112754008499905,
+        "flow_id": "central-5-bbe5531e-e82e-495b-8c3e-e03b525c0b25",
+        "stored": true
+      }
+    ],
+    "mean_ms": 52.05638920306228,
+    "p95_ms": 57.129448384512216,
+    "note": "Same model and SHAP path; one local SQLite insert; no EVM, external oracle, or decentralized audit.",
+    "tamper_test": {
+      "can_update_local_record_without_external_anchor": true
+    }
+  },
+  "provider": {
+    "chain_id": 31337,
+    "connected": true
+  }
+}

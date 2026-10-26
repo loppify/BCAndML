@@ -1,0 +1,78 @@
+{
+  "test_method": "Isolated FastAPI TestClient with injected service/database faults; contract-level role/replay checks are in security_contract_checks.json.",
+  "attempted_checks": 9,
+  "passed_checks": 9,
+  "checks": [
+    {
+      "check": "Підміна мітки атаки у payload",
+      "passed": true,
+      "http_status": 422,
+      "chain_submissions": 0
+    },
+    {
+      "check": "Нескінченне значення ознаки",
+      "passed": true,
+      "http_status": 422,
+      "chain_submissions": 0,
+      "response_excerpt": "{\"detail\":\"Feature src_bytes must be a finite number or null.\"}"
+    },
+    {
+      "check": "Повторне відправлення flow ID",
+      "passed": true,
+      "first_status": 200,
+      "replay_status": 200,
+      "replay_flag": true,
+      "chain_submissions": 1
+    },
+    {
+      "check": "Підміна збережених ознак",
+      "passed": true,
+      "http_status": 200,
+      "valid_after_change": false
+    },
+    {
+      "check": "100 контрольних змін для SHA-256 integrity",
+      "passed": true,
+      "intentional_mutations": 100,
+      "detected_mutations": 100,
+      "detection_rate": 1.0
+    },
+    {
+      "check": "Команда від неавторизованого gateway actor",
+      "passed": true,
+      "http_status": 200,
+      "allowed": false,
+      "reason": "Немає чинного дозволу шлюзу"
+    },
+    {
+      "check": "Недоступність oracle/RPC",
+      "passed": true,
+      "http_status": 502,
+      "prediction_status": "failed",
+      "oracle_monitor": {
+        "status": "error",
+        "processed": 0,
+        "last_success": null,
+        "last_error": "Injected RPC unavailable"
+      }
+    },
+    {
+      "check": "Недоступність SQLite",
+      "passed": true,
+      "http_status": 502,
+      "chain_submissions": 0,
+      "client_message": "Inference or oracle submission failed: Injected database unavailable"
+    },
+    {
+      "check": "Відхилення транзакції контрактом",
+      "passed": true,
+      "http_status": 422,
+      "prediction_status": "failed",
+      "error_reported": true
+    }
+  ],
+  "ipfs": {
+    "used_by_system": false,
+    "failure_test": "not applicable; artifacts use local filesystem and SQLite"
+  }
+}

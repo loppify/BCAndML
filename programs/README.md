@@ -7,5 +7,6 @@ This repository directory contains source code and run instructions for Practica
 - `lab_01_iot_design/`: ToN_IoT traffic analysis and the IoT IDS project specification.
 - `lab_02_iot_quarantine/`: IoT device registry, time-limited access, oracle decisions, and quarantine contracts.
 - `lab_03_iot_ml_integration/`: trained network attack detector, FastAPI oracle, local Hardhat deployment, and browser interface.
+- `lab_04_iot_experiments/`: reproducible chain, load, model robustness, cost and security measurements with raw results and defense slides.
 
 Each project has its own README with commands and requirements.
